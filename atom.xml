@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://91fz.org/"/>
-  <updated>2017-06-27T08:55:47.027Z</updated>
+  <updated>2017-06-27T09:44:20.732Z</updated>
   <id>http://91fz.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://91fz.org/2017/06/27/fuwu01/"/>
     <id>http://91fz.org/2017/06/27/fuwu01/</id>
     <published>2017-06-26T16:00:00.000Z</published>
-    <updated>2017-06-27T08:55:47.027Z</updated>
+    <updated>2017-06-27T09:44:20.732Z</updated>
     
     <content type="html"><![CDATA[<h1 id="谈谈服务治理与微服务"><a href="#谈谈服务治理与微服务" class="headerlink" title="谈谈服务治理与微服务"></a>谈谈服务治理与微服务</h1><p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
 <p>先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。</p>
@@ -84,9 +84,9 @@
 <li><strong>Hessian</strong></li>
 <li><strong>Thrift</strong></li>
 <li>… </li>
-<li>…   <h3 id="服务化面临的挑战"><a href="#服务化面临的挑战" class="headerlink" title="服务化面临的挑战"></a>服务化面临的挑战</h3></li>
+<li>…   </li>
 </ul>
-<p><strong>上面提到要实现服务化首先需要解决远程服务调用问题，除此之外，还有很多其他问题需要解决。</strong></p>
+<h3 id="服务化面临的挑战"><a href="#服务化面临的挑战" class="headerlink" title="服务化面临的挑战"></a>服务化面临的挑战</h3><p><strong>上面提到要实现服务化首先需要解决远程服务调用问题，除此之外，还有很多其他问题需要解决。</strong></p>
 <ul>
 <li>服务越来越多，配置管理复杂</li>
 <li>服务间依赖关系复杂</li>
@@ -143,6 +143,10 @@
     
     </summary>
     
+      <category term="微服务 SOA  服务治理" scheme="http://91fz.org/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
+    
+    
+      <category term="微服务,SOA,服务治理" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
   </entry>
   
@@ -151,7 +155,7 @@
     <link href="http://91fz.org/2017/06/01/kotlindemo/"/>
     <id>http://91fz.org/2017/06/01/kotlindemo/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-06-27T06:50:37.089Z</updated>
+    <updated>2017-06-27T09:43:01.029Z</updated>
     
     <content type="html"><![CDATA[<p>自从Google I/O 大会上宣布 Kotlin 成为 Android 开发的官方语言，Kotlin 就吸引了很多人的目光，反正在家休息、研究了下，<br>整理成这篇博客来简单介绍下Kotlin。</p>
 <h2 id="Kotlin的起源"><a href="#Kotlin的起源" class="headerlink" title="Kotlin的起源"></a><strong>Kotlin的起源</strong></h2><p>Kotlin是一个基于JVM的新的编程语言，由JetBrains开发。JetBrains，作为目前广受欢迎的Java IDE IntelliJ的提供商，在Apache许可下已经开源其Kotlin编程语言。与Java相比，Kotlin的语法更简洁、更具表达性，而且提供了更多的特性，比如，<strong>高阶函数</strong>、<strong>操作符重载</strong>、<strong>字符串模板</strong>。<strong>它与Java高度可互操作</strong>，而且还可以同时用在一个项目中。</p>
@@ -201,6 +205,10 @@
     
     </summary>
     
+      <category term="Kotlin" scheme="http://91fz.org/categories/Kotlin/"/>
+    
+    
+      <category term="kotlin springmvc" scheme="http://91fz.org/tags/kotlin-springmvc/"/>
     
   </entry>
   
@@ -256,7 +264,7 @@
     <link href="http://91fz.org/2015/08/11/QQ%E6%8A%80%E6%9C%AF/"/>
     <id>http://91fz.org/2015/08/11/QQ技术/</id>
     <published>2015-08-10T16:00:00.000Z</published>
-    <updated>2017-06-26T10:33:43.993Z</updated>
+    <updated>2017-06-27T09:44:00.249Z</updated>
     
     <content type="html"><![CDATA[<h1 id="QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）"><a href="#QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）" class="headerlink" title="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）"></a>QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）</h1><h2 id="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"><a href="#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！" class="headerlink" title="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"></a>首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！</h2><h3 id="盗取QQ的方式有"><a href="#盗取QQ的方式有" class="headerlink" title="盗取QQ的方式有"></a><strong>盗取QQ的方式有</strong></h3><ul>
 <li>(1)<strong>远程木马盗号</strong>   </li>
@@ -288,6 +296,10 @@
     
     </summary>
     
+      <category term="以前" scheme="http://91fz.org/categories/%E4%BB%A5%E5%89%8D/"/>
+    
+    
+      <category term="盗取QQ,QQ技术" scheme="http://91fz.org/tags/%E7%9B%97%E5%8F%96QQ-QQ%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
@@ -313,11 +325,158 @@
   </entry>
   
   <entry>
+    <title>ROM修改之厨房简介及环境配置</title>
+    <link href="http://91fz.org/2012/10/10/Kitchen/"/>
+    <id>http://91fz.org/2012/10/10/Kitchen/</id>
+    <published>2012-10-09T16:00:00.000Z</published>
+    <updated>2017-06-27T10:14:45.333Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ROM修改之厨房简介及环境配置"><a href="#ROM修改之厨房简介及环境配置" class="headerlink" title="ROM修改之厨房简介及环境配置 **"></a>ROM修改之厨房简介及环境配置 **</h1><h2 id="一-厨房简介及环境配置"><a href="#一-厨房简介及环境配置" class="headerlink" title="一.厨房简介及环境配置"></a>一.厨房简介及环境配置</h2><h3 id="1-厨房简介"><a href="#1-厨房简介" class="headerlink" title="1.厨房简介"></a>1.厨房简介</h3><p>厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本</p>
+<h3 id="2-厨房支持的机型（ROM）"><a href="#2-厨房支持的机型（ROM）" class="headerlink" title="2.厨房支持的机型（ROM）"></a>2.厨房支持的机型（ROM）</h3><h4 id="1）HTC设备"><a href="#1）HTC设备" class="headerlink" title="1）HTC设备"></a>1）HTC设备</h4><ul>
+<li>Buzz / Wildfire</li>
+<li>Desire</li>
+<li>Desire HD / Inspire 4G</li>
+<li>Desire S</li>
+<li>Desire Z</li>
+<li>Dream / G1</li>
+<li>Droid Eris</li>
+<li>Evo 4G</li>
+<li>Evo Shift 4G</li>
+<li>HD2 </li>
+<li>Hero / G2 Touch</li>
+<li>Incredible</li>
+<li>Incredible S</li>
+<li>Legend</li>
+<li>Magic / myTouch 3G</li>
+<li>myTouch 3G Slide</li>
+<li>myTouch 4G / Glacier</li>
+<li>Nexus One</li>
+<li>Tattoo / Click</li>
+<li>Thunderbolt<br>理论支持一些其他机型的已Root的HTC手机（android操作系统）也有可能支持一些WindowsMobile等可以使用Android NAND ROM的机型</li>
+</ul>
+<h3 id="2）非HTC设备："><a href="#2）非HTC设备：" class="headerlink" title="2）非HTC设备："></a>2）非HTC设备：</h3><ul>
+<li>戴尔 Streak 7</li>
+<li>华为 U8100/U8110/U8120/U8150</li>
+<li>LG Ally</li>
+<li>LG GT540 Optimus</li>
+<li>LG P500 </li>
+<li>LG Shine Plus</li>
+<li>LG Vortex</li>
+<li>摩托罗拉 CLIQ / CLIQ XT</li>
+<li>三星 Galaxy S - You must use RMGeren’s SGS version of this kitchen</li>
+<li>三星 Nexus S<br>•索爱 Xperia X10 / X10 Mini / X10 Mini Pro - 不含 boot.img </li>
+<li>T-Mobile Pulse</li>
+</ul>
+<h3 id="3）理论支持设备（还没正式确定）"><a href="#3）理论支持设备（还没正式确定）" class="headerlink" title="3）理论支持设备（还没正式确定）"></a>3）理论支持设备（还没正式确定）</h3><ul>
+<li>摩托罗拉Droid</li>
+<li>摩托罗拉Milestone（修改前需移除boot.img文件）</li>
+</ul>
+<p>由于我的电脑室win7系统 所以就以win7为例<br><strong>安装方法：</strong><br>首先学java语言的同学肯定自己电脑上已经配置好java环境了可以直接省略安装JDK这一步：</p>
+<ul>
+<li>下载后直接全默认安装JDK </li>
+<li>最好默认C盘，如果在别的盘，下面的路径自行对应修改</li>
+<li>设置环境变量：JAVA_HOME、PATH、CLASSPATH<br><strong>JAVA_HOME</strong>：<br><strong>我的电脑</strong>-&gt;<strong>属性</strong>-&gt;<strong>高级</strong>-&gt;单击“<strong>环境变量</strong>”按钮-&gt;单击“<strong>系统变量</strong>”区域的“<strong>新建</strong>”按钮-&gt;在“<strong>变量名</strong>”文本框中输入<strong>JAVA_HOME</strong>，在“<strong>变量值</strong>”文本框中输入<strong>JDK</strong>的安装路径（列如<strong>C:\Program Files\Java\jdk1.6.0_22</strong>）,单击<strong>确定</strong>   </li>
+</ul>
+<p><strong>PATH</strong>：在系统变量中查看<strong>PATH</strong>变量，如果存在<strong>PATH</strong>，则在最末尾多添加一个<strong>%JAVA_HOME%\bin</strong>;（<strong>直接添加，无需加空格之类的</strong>）。如果不存在，<strong>则新建变量PATH</strong>，设定变量值为：<strong>%JAVA_HOME%\bin</strong>;<br><strong>CLASSPATH</strong>：在系统变量中查看<strong>CLASSPATH</strong>变量，如果存在<strong>CLASSPATH</strong>，则在最末尾添加%JAVA_HOME%lib\dt.jar;%JAVA_HOME%\lib\tools.jar。如果不存在，则新建一个，设定变量值为：<strong>%JAVA_HOME%lib\dt.jar;%JAVA_HOME%\lib\tools.jar</strong>;<br><strong>完成以上步骤后，开始验证是否安装成功。</strong><br><strong>运行CMD（开始，运行，输入cmd，回车），输入：javac。假如出现了一堆如何使用java的帮助，那就是已经安装成功了。</strong>  </p>
+<p><strong>第二步。安装cygwin</strong>    </p>
+<ul>
+<li>解压下载到的压缩包（比如解压到C盘，解压出来的东西包括：<strong>cygwin_packages</strong>文件夹、s<strong>etup.exe</strong>、安装说明.txt），记得路径中不要带中<br>文，最好也不要带空格。</li>
+<li>运行 <strong>Setup.exe</strong> 安装程序</li>
+<li>选择 “<strong>Install from Local Directory</strong>“，然后点击 <strong>Next</strong> （下一步）。</li>
+<li>接下来，指定根目录。也就是你想要安装 <strong>Cygwin</strong> 的位置(但不能是本压缩包解压出来的 <strong>cygwin_packages</strong> 文件夹)。如果你喜欢，可以是<strong>C:\Cygwin</strong>，注意要确定文件夹名种没有空格。然后点击 <strong>Next</strong> （下一步）</li>
+<li>然后，指定 <strong>Local Package Directory</strong>，必须指定为 <strong>cygwin_packages</strong> 文件夹所在路径（且<strong>cygwin_packages</strong>下级目录必须是<strong>英文</strong>（这一步有这样一个注意点，路径一定要指到<strong>cygwin_packages</strong> ）<br>。假如跳出了一个警告对话框，<strong>点击yes</strong>（是）。</li>
+<li><p>当安装程序显示出所有的包名时，点击上方第一个的 “<strong>All &lt;-&gt; Default</strong>“ 为 “<strong>All &lt;-&gt; Install</strong>“ (点击那个环形箭头符号)（这一步有比较长的进度<br>条）   </p>
+</li>
+<li><p>然后点击 <strong>Next</strong> （下一步），安装程序就会为你安装好 <strong>Kitchen</strong> 需要 <strong>Cygwin</strong> 提供的一切支持</p>
+</li>
+<li>最后，点击桌面上的 <strong>Cygwin</strong> 快捷方式以便为你创建 <strong>home</strong> 文件夹。（如果此步一闪而过注意检查上面的步骤）</li>
+<li><strong>最后，开始使用厨房：</strong></li>
+<li>完成上面的步骤后，将下载到厨房解压到<strong>C:\Cygwin\home\Administrator</strong>（如果是你设置了自己的登录名，那么<strong>Administrator</strong>就变成你自己的用户名就行了，同理如果你不是在C盘，做相应变化）<br>也就是说，解压完厨房，<strong>C:\Cygwin\home\Administrator</strong>目录下必有：<strong>original_update</strong>，<strong>scripts</strong>，<strong>tools</strong>，<strong>menu</strong>这几个厨房文件</li>
+<li><p>点击桌面上的 <strong>Cygwin</strong> 快捷方式</p>
+</li>
+<li><p>执行命令：<strong>./menu</strong><br><strong>正式开始使用厨房定制ROM</strong><br>厨房很强大，可以支持很多<strong>ROM</strong>，不管是官方的还是民间的，这里我能力有限只能稍微介绍怎么提取并修改官方<strong>ROM</strong>，其他<strong>ROM</strong>大家可以自己摸索。</p>
+</li>
+</ul>
+<p>1，把拷贝出来的<strong>rom.zip</strong>复制到U盘中，<br>通过U盘把提取的ZIP复制到虚拟机中。<br>2，打开zip文件，或者解压zip文件，把里面的boot.img和system.img拷贝到桌面的<br>“到original update的链接”文件夹中。<br>3，运行桌面的“到menu的链接”，点击在终端中运行。(这一步好像有时候不行，按菜单功能不能进入，如果不行的话，大家只能打开主文件夹，双击menu打开。或者在附件-终端中输入“./menu”打开厨房了)<br>4，根据屏幕提示：选择1，按回车，再按回车，在按1选择刚才拷入的boot.img和system.img，按回车后就开始分解img文件了。分解后提示查看ROM的一些信息，根据需要Y或者N，回车。<br>5，根据菜单上的功能按相应的数字键进入。并根据提示完成定制。配置完，在主菜单选择99按回车可以打包定制目录，自动生成ROM。文件夹在主目录的output文件夹中（菜单栏-位置-主文件夹）。按上面的方法创建output文件夹的快速链接，并放到桌面去。方便以后打开。<br>6，把zip拷贝到U盘。再拷贝到手机内存卡。然后接下来大家都懂得。或者直接把手机通过可移动磁盘接入到虚拟机中也可以。操作和U盘一样。<br>厨房菜单功能简单介绍：</p>
+<h2 id="Main-Menu（主菜单）"><a href="#Main-Menu（主菜单）" class="headerlink" title="Main Menu（主菜单）"></a>Main Menu（主菜单）</h2><ul>
+<li><ol>
+<li>Set up working folder from ROM（从ROM文件导入到工作文件夹）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add root permissions（加入ROOT权限）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add BusyBox（加入BusyBox）</li>
+</ol>
+</li>
+<li><ol>
+<li>Disable boot screen sounds（禁止启动音乐）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add wireless tethering（加入WIFI共享）</li>
+</ol>
+</li>
+<li><ol>
+<li>Zipalign all *.apk files to optimize RAM usage（对所有apk进行Zipalign，进行程序内存优化）</li>
+</ol>
+</li>
+<li><ol>
+<li>Change wipe status of ROM（刷机时清除机器数据和缓存，但不包括SD-ext分区）</li>
+</ol>
+</li>
+<li><ol>
+<li>Change name of ROM（更改ROM的名称）</li>
+</ol>
+</li>
+<li><ol>
+<li>Check update-script for errors（检查update-script升级脚本是否有错误）</li>
+</ol>
+</li>
+<li><ol>
+<li>Show working folder information（显示工作目录下rom的信息）<br>Advanced Options（增强定制选项）</li>
+</ol>
+</li>
+<li>11 - Deodex files in your ROM （Deodex ROM中的文件，就是把system/app下的APK和ODEX合并为一个apk文件，以便进行更新系统软件）</li>
+<li>12 - Add task killer tweak for speed (stock ROM only)（加入Android内存优化用以加快速度，只适用于官方ROM）</li>
+<li>13 - Add /data/app functionality（加入自定义可卸载程序存放目录，放在这里面的程序刷机后可以卸载，刷完格式化手机也会丢失）</li>
+<li>14 - Add Nano text editor + sysro/sysrw（加入Nano文本编辑器，System目录的只读和读写转换）</li>
+<li>15 - Add Bash (command shell)（加入Shell命令集）</li>
+<li>16 - Add Apps2SD（加入Apps2SD功能，就是A2SD+之类的）</li>
+<li>17 - Add /etc/init.d scripts support (busybox run-parts)（加入对/etc/init.d目录下脚本运行的支持）</li>
+<li>18 - Add custom boot animation functionality（加入自定义开机动画的支持）</li>
+<li>19 - Porting tools (experimental)（移植工具，仅测试）</li>
+<li>20 - Unpack or re-pack a boot.img（打包或解包boot.img）</li>
+<li>21 - Unpack data.img （分解data.img）</li>
+<li>22 - Sign APK file(s)（签名apk安装包）</li>
+<li>23 - Convert update-script or updater-script（转换update-script 或者updater-script）</li>
+<li>24 - Run plugin scripts（运行插件脚本之类的）<br>Build ROM from working folder（将工作目录下的ROM打包，打包完就可以刷机了。）</li>
+<li>About/Update kitchen（厨房的升级，关于）</li>
+<li>X. Exit（退出）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ROM修改之厨房简介及环境配置&quot;&gt;&lt;a href=&quot;#ROM修改之厨房简介及环境配置&quot; class=&quot;headerlink&quot; title=&quot;ROM修改之厨房简介及环境配置 **&quot;&gt;&lt;/a&gt;ROM修改之厨房简介及环境配置 **&lt;/h1&gt;&lt;h2 id=&quot;一-厨房简介及
+    
+    </summary>
+    
+      <category term="以前" scheme="http://91fz.org/categories/%E4%BB%A5%E5%89%8D/"/>
+    
+    
+      <category term="ROM修改" scheme="http://91fz.org/tags/ROM%E4%BF%AE%E6%94%B9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>让国产山寨手机死机黑屏之imy</title>
     <link href="http://91fz.org/2011/11/15/imy/"/>
     <id>http://91fz.org/2011/11/15/imy/</id>
     <published>2011-11-14T16:00:00.000Z</published>
-    <updated>2017-06-26T06:15:01.841Z</updated>
+    <updated>2017-06-27T09:41:50.457Z</updated>
     
     <content type="html"><![CDATA[<h1 id="让国产山寨手机死机黑屏之imy"><a href="#让国产山寨手机死机黑屏之imy" class="headerlink" title="让国产山寨手机死机黑屏之imy"></a><strong>让国产山寨手机死机黑屏之imy</strong></h1><hr>
 <p>IMY铃声是一段铃声代码文件，具有占有空间小、容易编辑等特点。中国移动规定其为通用彩信文件格式之一,可以用短信进行收发（当然不花流量咯！）。IMY标准非常灵活，音域跨了9个8度，24种不同音长；还可以加入振动、屏幕背光及来电灯亮灭的效果，给人以更加美妙神奇的音乐体验。</p>
@@ -339,6 +498,10 @@
     
     </summary>
     
+      <category term="以前" scheme="http://91fz.org/categories/%E4%BB%A5%E5%89%8D/"/>
+    
+    
+      <category term="moblie" scheme="http://91fz.org/tags/moblie/"/>
     
   </entry>
   
