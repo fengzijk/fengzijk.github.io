@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://91fz.org/images/rpc/02.png">
 <meta property="og:image" content="http://91fz.org/images/rpc/03.png">
 <meta property="og:image" content="http://91fz.org/images/rpc/04.png">
-<meta property="og:updated_time" content="2017-06-27T11:38:54.308Z">
+<meta property="og:updated_time" content="2017-06-27T11:42:32.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于RPC的总结">
 <meta name="twitter:description" content="关于RPC相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程">
@@ -445,16 +445,15 @@
 </ul>
 <h4 id="消息体"><a href="#消息体" class="headerlink" title="消息体"></a><strong>消息体</strong></h4><p>采用序列化编码，常见有以下格式</p>
 <ul>
-<li>xml : 如 <strong>webservie</strong> <strong>SOAP</strong></li>
-<li>json : 如 <strong>JSON-RPC</strong></li>
+<li><strong>xml</strong> : 如 <strong>webservie</strong> <strong>SOAP</strong></li>
+<li><strong>json</strong> : 如 <strong>JSON-RPC</strong></li>
 <li><p><strong>binary</strong>: 如 <strong>thrift</strong>; <strong>hession</strong>; <strong>kryo</strong> 等<br>格式确定后编解码就简单了，由于头长度一定所以我们比较关心的就是消息体的序列化方式。 序列化我们关心三个方面：</p>
-<ul>
-<li><strong>序列化和反序列化的效率，越快越好。</strong>   </li>
-</ul>
+<p><strong>序列化和反序列化的效率，越快越好。</strong>   </p>
 </li>
-<li><strong>序列化后的字节长度，越小越好</strong>  </li>
-<li><strong>序列化和反序列化的兼容性，接口参数对象若增加了字段，是否兼容。</strong><br>上面这三点有时是鱼与熊掌不可兼得，这里面涉及到具体的序列化库实现细节，就不在本文进一步展开分析了。<h4 id="传输服务"><a href="#传输服务" class="headerlink" title="传输服务"></a>传输服务</h4>协议编码之后，自然就是需要将编码后的 <strong>RPC</strong> 请求消息传输到服务方，服务方执行后返回结果消息或确认消息给客户方。 <strong>RPC</strong> 的应用场景实质是一种可靠的请求应答消息流，和 <strong>HTTP</strong> 类似。 因此选择长连接方式的 <strong>TCP</strong> 协议会更高效，与 <strong>HTTP</strong> 不同的是在协议层面我们定义了每个消息的唯一 <strong>id</strong>，因此可以更容易的复用连接。</li>
 </ul>
+<p><strong>序列化后的字节长度，越小越好</strong>  </p>
+<p><strong>序列化和反序列化的兼容性，接口参数对象若增加了字段，是否兼容。</strong><br>上面这三点有时是鱼与熊掌不可兼得，这里面涉及到具体的序列化库实现细节，就不在本文进一步展开分析了。</p>
+<h4 id="传输服务"><a href="#传输服务" class="headerlink" title="传输服务"></a>传输服务</h4><p>协议编码之后，自然就是需要将编码后的 <strong>RPC</strong> 请求消息传输到服务方，服务方执行后返回结果消息或确认消息给客户方。 <strong>RPC</strong> 的应用场景实质是一种可靠的请求应答消息流，和 <strong>HTTP</strong> 类似。 因此选择长连接方式的 <strong>TCP</strong> 协议会更高效，与 <strong>HTTP</strong> 不同的是在协议层面我们定义了每个消息的唯一 <strong>id</strong>，因此可以更容易的复用连接。</p>
 <p>既然使用长连接，那么第一个问题是到底 <strong>client</strong> 和 <strong>server</strong> 之间需要多少根连接？ 实际上单连接和多连接在使用上没有区别，对于数据传输量较小的应用类型，单连接基本足够。 单连接和多连接最大的区别在于，每根连接都有自己私有的发送和接收缓冲区， 因此大数据量传输时分散在不同的连接缓冲区会得到更好的吞吐效率。 所以，如果你的数据传输量不足以让单连接的缓冲区一直处于饱和状态的话，那么使用多连接并不会产生任何明显的提升， 反而会增加连接管理的开销。</p>
 <p>连接是由 client 端发起建立并维持。 如果 client 和 server 之间是直连的，那么连接一般不会中断（当然物理链路故障除外）。 如果 client 和 server 连接经过一些负载中转设备，有可能连接一段时间不活跃时会被这些中间设备中断。 为了保持连接有必要定时为每个连接发送心跳数据以维持连接不中断。 心跳消息是 RPC 框架库使用的内部消息，在前文协议头结构中也有一个专门的心跳位， 就是用来标记心跳消息的，它对业务应用透明。</p>
 <h4 id="执行调用"><a href="#执行调用" class="headerlink" title="执行调用"></a>执行调用</h4><p>client stub 所做的事情仅仅是编码消息并传输给服务方，而真正调用过程发生在服务方。 server stub 从前文的结构拆解中我们细分了 <strong>RpcProcessor</strong> 和 <strong>RpcInvoker</strong> 两个组件， 一个负责控制调用过程，一个负责真正调用。 这里我们还是以 <strong>java</strong> 中实现这两个组件为例来分析下它们到底需要做什么？</p>
