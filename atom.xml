@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://91fz.org/"/>
-  <updated>2017-06-27T09:44:20.732Z</updated>
+  <updated>2017-06-27T10:47:34.565Z</updated>
   <id>http://91fz.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://91fz.org/2017/06/27/fuwu01/"/>
     <id>http://91fz.org/2017/06/27/fuwu01/</id>
     <published>2017-06-26T16:00:00.000Z</published>
-    <updated>2017-06-27T09:44:20.732Z</updated>
+    <updated>2017-06-27T10:47:34.565Z</updated>
     
     <content type="html"><![CDATA[<h1 id="谈谈服务治理与微服务"><a href="#谈谈服务治理与微服务" class="headerlink" title="谈谈服务治理与微服务"></a>谈谈服务治理与微服务</h1><p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
 <p>先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。</p>
@@ -98,7 +98,7 @@
 <li>服务上线与下线</li>
 <li>服务文档</li>
 <li>… </li>
-<li>…<br><strong>有时间我会专门写一篇关于RPC的文章</strong><br>我们接着往下说，有了服务  就需要治理跟维护  下面我们讲一讲服务治理</li>
+<li>…<br><strong>有时间我专门有写一篇关于RPC的文章</strong><br>我们接着往下说，有了服务  就需要治理跟维护  下面我们讲一讲服务治理</li>
 </ul>
 <h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><p>上面提到了服务化，其实要想服务化，服务治理是关键。那么有没有好的服务治理方案呢？答案是有的，而且还很多，比如：   <strong>ICE</strong> <strong>dubbo</strong> <strong>springcloud</strong> <strong>魔毯</strong> 等等<br>下面我们简单说说服务治理所需要的</p>
 <ul>
@@ -112,7 +112,7 @@
 <li>传达对服务所做的更改。</li>
 <li>用于联系和强制应用于某个服务的策略的机制。策略通过使用治理框架来定义。</li>
 <li>具有生命周期感知性的可自定义系统，该系统在生命周期中发生阶段更改时触发验证，以便能够自动化逐个阶段的治理验证。</li>
-<li>在理想的情况下，注册中心应该针对SOA运行时进行优化，以便能够在运行时期间，使用存储在注册中心的元数据来通过动态路由充实内容。<br><strong>详细的各个中间件的原理以及怎么解决服务治理的我会专门写文章</strong><br>继续往下说 从去年微服务突然火了起来，咱们看看微服务   <h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2></li>
+<li>在理想的情况下，注册中心应该针对SOA运行时进行优化，以便能够在运行时期间，使用存储在注册中心的元数据来通过动态路由充实内容。<br><strong>详细的各个中间件的原理以及怎么解决服务治理的我有专门写文章</strong><br>继续往下说 从去年微服务突然火了起来，咱们看看微服务   <h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2></li>
 </ul>
 <p>在很多人都在谈微服务，那么到底什么是微服务呢？这里谈谈我对微服务的理解。</p>
 <p>微服务有两个核心：</p>
@@ -256,6 +256,113 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>关于RPC的总结</title>
+    <link href="http://91fz.org/2015/08/20/rpc/"/>
+    <id>http://91fz.org/2015/08/20/rpc/</id>
+    <published>2015-08-19T16:00:00.000Z</published>
+    <updated>2017-06-27T11:38:54.308Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于RPC"><a href="#关于RPC" class="headerlink" title="关于RPC"></a>关于RPC</h1><p>相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言</p>
+<h2 id="什么是RPC"><a href="#什么是RPC" class="headerlink" title="什么是RPC"></a>什么是RPC</h2><p>它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。<strong>RPC</strong>协议假定某些传输协议的存在，如<strong>TCP</strong>或<strong>UDP</strong>，为通信程序之间携带信息数据。<br>RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
+<p>通俗点就是它允许程序调用另一个地址空间（通常是共享网络的另一台机器上）的过程或函数，而不用程序员显式编码这个远程调用的细节。即程序员无论是调用本地的还是远程的，本质上编写的调用代码基本相同。</p>
+<h2 id="RPC起源"><a href="#RPC起源" class="headerlink" title="RPC起源"></a>RPC起源</h2><p>RPC 这个概念术语在上世纪 80 年代由 <strong>Bruce</strong> <strong>Jay</strong> <strong>Nelson</strong> 提出。这里我们追溯下当初开发 <strong>RPC</strong> 的原动机是什么？在 <strong>Nelson</strong> 的论文 “<strong>Implementing Remote Procedure Calls</strong>“ 中他提到了几点：</p>
+<ul>
+<li>简单：RPC 概念的语义十分清晰和简单，这样建立分布式计算就更容易。</li>
+<li>高效：过程调用看起来十分简单而且高效。</li>
+<li>通用：在单机计算中过程往往是不同算法部分间最重要的通信机制<h3 id="RPC-结构"><a href="#RPC-结构" class="headerlink" title="RPC 结构"></a>RPC 结构</h3><strong>Nelson</strong> 的论文中指出实现 RPC 的程序包括 5 个部分：</li>
+<li><strong>User</strong></li>
+<li><strong>User-stub</strong></li>
+<li><strong>RPCRuntime</strong></li>
+<li><strong>Server-stub</strong></li>
+<li><strong>Server</strong>   </li>
+</ul>
+<p>这 5 个部分的关系如下图所示<br><img src="/images/rpc/01.png" alt="image">  </p>
+<p><strong>RPC</strong> 服务方通过 <strong>RpcServer</strong> 去导出（<strong>export</strong>）远程接口方法，而客户方通过 <strong>RpcClient</strong> 去引入（<strong>import</strong>）远程接口方法。 客户方像调用本地方法一样去调用远程接口方法，<strong>RPC</strong> 框架提供接口的代理实现，实际的调用将委托给代理 <strong>RpcProxy</strong> 。 代理封装调用信息并将调用转交给 <strong>RpcInvoker</strong> 去实际执行。 在客户端的 <strong>RpcInvoker</strong> 通过连接器 <strong>RpcConnector</strong> 去维持与服务端的通道 RpcChannel， 并使用 <strong>RpcProtocol</strong> 执行协议编码（<strong>encode</strong>）并将编码后的请求消息通过通道发送给服务方。</p>
+<p>RPC 服务端接收器 <strong>RpcAcceptor</strong> 接收客户端的调用请求，同样使用 RpcProtocol 执行协议解码（<strong>decode</strong>）。 解码后的调用信息传递给 RpcProcessor 去控制处理调用过程，最后再委托调用给 RpcInvoker 去实际执行并返回调用结果</p>
+<p>这里 <strong>user</strong> 就是 <strong>client</strong> 端，当 <strong>user</strong> 想发起一个远程调用时，它实际是通过本地调用 <strong>user-stub</strong>。<strong>user-stub</strong> 负责将调用的接口、方法和参数通过约定的协议规范进行编码并通过本地的 <strong>RPCRuntime</strong> 实例传输到远端的实例。远端 <strong>RPCRuntime</strong> 实例收到请求后交给 <strong>server-stub</strong> 进行解码后发起本地端调用，调用结果再返回给 <strong>user</strong> 端。</p>
+<h2 id="RPC-组件职责"><a href="#RPC-组件职责" class="headerlink" title="RPC 组件职责"></a>RPC 组件职责</h2><p>上面我们进一步拆解了 RPC 实现结构的各个组件组成部分，下面我们详细说明下每个组件的职责划分。</p>
+<ul>
+<li><strong>RpcServer</strong><br>负责导出（<strong>export</strong>）远程接口</li>
+<li>RpcClient<br>负责导入（<strong>import</strong>）远程接口的代理实现</li>
+<li>RpcProxy<br>远程接口的代理实现</li>
+<li><strong>RpcInvoker</strong><br>客户方实现：负责编码调用信息和发送调用请求到服务方并等待调用结果返回<br>服务方实现：负责调用服务端接口的具体实现并返回调用结果</li>
+<li><strong>RpcProtocol</strong><br>负责协议编/解码</li>
+<li><strong>RpcConnector</strong><br>负责维持客户方和服务方的连接通道和发送数据到服务方</li>
+<li><strong>RpcAcceptor</strong><br>负责接收客户方请求并返回请求结果</li>
+<li><strong>RpcProcessor</strong><br>负责在服务方控制调用过程，包括管理调用线程池、超时时间等</li>
+<li><strong>RpcChannel</strong><br>数据传输通道</li>
+</ul>
+<h2 id="RPC-实现分析"><a href="#RPC-实现分析" class="headerlink" title="RPC 实现分析"></a>RPC 实现分析</h2><p>在进一步拆解了组件并划分了职责之后，这里以在 <strong>java</strong> 平台实现该 <strong>RPC</strong> 框架概念模型为例，详细分析下实现中需要考虑的因素。<br>导出远程接口<br>导出远程接口的意思是指只有导出的接口可以供远程调用，而未导出的接口则不能。 在 <strong>java</strong> 中导出接口的代码片段可能如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">DemoService demo   =new...;</div><div class="line">RpcServer   server =new...;</div><div class="line">server.export(DemoService.class, demo, options);</div></pre></td></tr></table></figure>
+<p>我们可以导出整个接口，也可以更细粒度一点只导出接口中的某些方法，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 只导出 DemoService 中签名为 hi(String s) 的方法</div><div class="line">server.export(DemoService.class, demo,&quot;hi&quot;,newClass&lt;?&gt;[] &#123; String.class&#125;, options);</div></pre></td></tr></table></figure>
+<p><strong>Java</strong> 中还有一种比较特殊的调用就是多态，也就是一个接口可能有多个实现，那么远程调用时到底调用哪个？ 这个本地调用的语义是通过 <strong>jvm</strong> 提供的引用多态性隐式实现的，那么对于 RPC 来说跨进程的调用就没法隐式实现了。 如果前面 <strong>DemoService</strong> 接口有2个实现，那么在导出接口时就需要特殊标记不同的实现，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">DemoService demo   =new...;</div><div class="line">DemoService demo2  =new...;</div><div class="line">RpcServer   server =new...;</div><div class="line">server.export(DemoService.class, demo, options);</div><div class="line">server.export(&quot;demo2&quot;, DemoService.class, demo2, options);</div></pre></td></tr></table></figure>
+<h3 id="导入远程接口与客户端代理"><a href="#导入远程接口与客户端代理" class="headerlink" title="导入远程接口与客户端代理"></a><strong>导入远程接口与客户端代理</strong></h3><p>导入相对于导出远程接口，客户端代码为了能够发起调用必须要获得远程接口的方法或过程定义。 目前，大部分跨语言平台 <strong>RPC</strong> 框架采用根据 <strong>IDL</strong> 定义通过 <strong>code generator</strong> 去生成 <strong>stub</strong> 代码， 这种方式下实际导入的过程就是通过代码生成器在编译期完成的。 我所使用过的一些跨语言平台 <strong>RPC</strong> 框架如 <strong>CORBAR</strong>、<strong>WebService</strong>、<strong>ZEROC-ICE</strong>、<strong>Thrift</strong> 均是此类方式。</p>
+<p>代码生成的方式对跨语言平台 <strong>RPC</strong> 框架而言是必然的选择，而对于同一语言平台的 RPC 则可以通过共享接口定义来实现。 在 <strong>java</strong> 中导入接口的代码片段如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">RpcClient client =new...;</div><div class="line">DemoService demo = client.refer(DemoService.class);</div><div class="line">demo.hi(&quot;how are you?&quot;);</div></pre></td></tr></table></figure>
+<p>在 java 中 <strong>import</strong> 是关键字，所以代码片段中我们用 <strong>refer</strong> 来表达导入接口的意思。 这里的导入方式本质也是一种代码生成技术，只不过是在运行时生成，比静态编译期的代码生成看起来更简洁些。 <strong>java</strong> 里至少提供了两种技术来提供动态代码生成，一种是 <strong>jdk</strong> 动态代理，另外一种是字节码生成。 动态代理相比字节码生成使用起来更方便，但动态代理方式在性能上是要逊色于直接的字节码生成的，而字节码生成在代码可读性上要差很多。 两者权衡起来，牺牲一些性能来获得代码可读性和可维护性显得更重要。<br>协议编解码<br>客户端代理在发起调用前需要对调用信息进行编码，这就要考虑需要编码些什么信息并以什么格式传输到服务端才能让服务端完成调用。 出于效率考虑，编码的信息越少越好（传输数据少），编码的规则越简单越好（执行效率高）。 我们先看下需要编码些什么信息：</p>
+<h3 id="调用编码"><a href="#调用编码" class="headerlink" title="调用编码"></a>调用编码</h3><ul>
+<li>接口方法 包括接口名、方法名   </li>
+<li>方法参数 包括参数类型、参数值</li>
+<li>调用属性 包括调用属性信息，例如调用附件隐式参数、调用超时时间等<h3 id="返回编码"><a href="#返回编码" class="headerlink" title="返回编码"></a>返回编码</h3></li>
+<li>返回结果<br>接口方法中定义的返回值</li>
+<li>返回码 异常返回码</li>
+<li>返回异常信息 调用异常信息<br>除了以上这些必须的调用信息，我们可能还需要一些元信息以方便程序编解码以及未来可能的扩展。 这样我们的编码消息里面就分成了两部分，一部分是元信息、另一部分是调用的必要信息。 如果设计一种 RPC 协议消息的话，元信息我们把它放在协议消息头中，而必要信息放在协议消息体中。 下面给出一种概念上的 <strong>RPC</strong> 协议消息设计格式：<br><img src="/images/rpc/02.png" alt="image"></li>
+</ul>
+<ul>
+<li><strong>magic</strong> : 协议魔数，为解码设计</li>
+<li><strong>header size</strong>: 协议头长度，为扩展设计</li>
+<li><strong>version</strong> : 协议版本，为兼容设计</li>
+<li><strong>st</strong> : 消息体序列化类型</li>
+<li><strong>hb</strong> : 心跳消息标记，为长连接传输层心跳设计</li>
+<li><strong>ow</strong> : 单向消息标记，</li>
+<li><strong>rp</strong> : 响应消息标记，不置位默认是请求消息</li>
+<li><strong>status</strong> <strong>code</strong>: 响应消息状态码</li>
+<li><strong>reserved</strong> : 为字节对齐保留</li>
+<li><strong>message</strong> <strong>id</strong> : 消息 id</li>
+<li><strong>body</strong> <strong>size</strong> : 消息体长度   </li>
+</ul>
+<h4 id="消息体"><a href="#消息体" class="headerlink" title="消息体"></a><strong>消息体</strong></h4><p>采用序列化编码，常见有以下格式</p>
+<ul>
+<li>xml : 如 <strong>webservie</strong> <strong>SOAP</strong></li>
+<li>json : 如 <strong>JSON-RPC</strong></li>
+<li><p><strong>binary</strong>: 如 <strong>thrift</strong>; <strong>hession</strong>; <strong>kryo</strong> 等<br>格式确定后编解码就简单了，由于头长度一定所以我们比较关心的就是消息体的序列化方式。 序列化我们关心三个方面：</p>
+<ul>
+<li><strong>序列化和反序列化的效率，越快越好。</strong>   </li>
+</ul>
+</li>
+<li><strong>序列化后的字节长度，越小越好</strong>  </li>
+<li><strong>序列化和反序列化的兼容性，接口参数对象若增加了字段，是否兼容。</strong><br>上面这三点有时是鱼与熊掌不可兼得，这里面涉及到具体的序列化库实现细节，就不在本文进一步展开分析了。<h4 id="传输服务"><a href="#传输服务" class="headerlink" title="传输服务"></a>传输服务</h4>协议编码之后，自然就是需要将编码后的 <strong>RPC</strong> 请求消息传输到服务方，服务方执行后返回结果消息或确认消息给客户方。 <strong>RPC</strong> 的应用场景实质是一种可靠的请求应答消息流，和 <strong>HTTP</strong> 类似。 因此选择长连接方式的 <strong>TCP</strong> 协议会更高效，与 <strong>HTTP</strong> 不同的是在协议层面我们定义了每个消息的唯一 <strong>id</strong>，因此可以更容易的复用连接。</li>
+</ul>
+<p>既然使用长连接，那么第一个问题是到底 <strong>client</strong> 和 <strong>server</strong> 之间需要多少根连接？ 实际上单连接和多连接在使用上没有区别，对于数据传输量较小的应用类型，单连接基本足够。 单连接和多连接最大的区别在于，每根连接都有自己私有的发送和接收缓冲区， 因此大数据量传输时分散在不同的连接缓冲区会得到更好的吞吐效率。 所以，如果你的数据传输量不足以让单连接的缓冲区一直处于饱和状态的话，那么使用多连接并不会产生任何明显的提升， 反而会增加连接管理的开销。</p>
+<p>连接是由 client 端发起建立并维持。 如果 client 和 server 之间是直连的，那么连接一般不会中断（当然物理链路故障除外）。 如果 client 和 server 连接经过一些负载中转设备，有可能连接一段时间不活跃时会被这些中间设备中断。 为了保持连接有必要定时为每个连接发送心跳数据以维持连接不中断。 心跳消息是 RPC 框架库使用的内部消息，在前文协议头结构中也有一个专门的心跳位， 就是用来标记心跳消息的，它对业务应用透明。</p>
+<h4 id="执行调用"><a href="#执行调用" class="headerlink" title="执行调用"></a>执行调用</h4><p>client stub 所做的事情仅仅是编码消息并传输给服务方，而真正调用过程发生在服务方。 server stub 从前文的结构拆解中我们细分了 <strong>RpcProcessor</strong> 和 <strong>RpcInvoker</strong> 两个组件， 一个负责控制调用过程，一个负责真正调用。 这里我们还是以 <strong>java</strong> 中实现这两个组件为例来分析下它们到底需要做什么？</p>
+<p>java 中实现代码的动态接口调用目前一般通过反射调用。 除了原生的 jdk 自带的反射，一些第三方库也提供了性能更优的反射调用， 因此 <strong>RpcInvoker</strong> 就是封装了反射调用的实现细节。</p>
+<p>调用过程的控制需要考虑哪些因素，<strong>RpcProcessor</strong> 需要提供什么样地调用控制服务呢？ 下面提出几点以启发思考：</p>
+<h4 id="效率提升"><a href="#效率提升" class="headerlink" title="效率提升"></a>效率提升</h4><p>每个请求应该尽快被执行，因此我们不能每请求来再创建线程去执行，需要提供线程池服务。</p>
+<h4 id="资源隔离"><a href="#资源隔离" class="headerlink" title="资源隔离"></a>资源隔离</h4><p>当我们导出多个远程接口时，如何避免单一接口调用占据所有线程资源，而引发其他接口执行阻塞。</p>
+<h4 id="超时控制"><a href="#超时控制" class="headerlink" title="超时控制"></a>超时控制</h4><p>当某个接口执行缓慢，而 <strong>client</strong> 端已经超时放弃等待后，<strong>server</strong> 端的线程继续执行此时显得毫无意义。<br>RPC 异常处理<br>无论 RPC 怎样努力把远程调用伪装的像本地调用，但它们依然有很大的不同点，而且有一些异常情况是在本地调用时绝对不会碰到的。 在说异常处理之前，我们先比较下本地调用和 <strong>RPC</strong> 调用的一些差异：</p>
+<p>本地调用一定会执行，而远程调用则不一定，调用消息可能因为网络原因并未发送到服务方。<br>本地调用只会抛出接口声明的异常，而远程调用还会跑出 <strong>RPC</strong> 框架运行时的其他异常。<br>本地调用和远程调用的性能可能差距很大，这取决于 <strong>RPC</strong> 固有消耗所占的比重。<br>正是这些区别决定了使用 <strong>RPC</strong> 时需要更多考量。 当调用远程接口抛出异常时，异常可能是一个业务异常， 也可能是 <strong>RPC</strong> 框架抛出的运行时异常（如：网络中断等）。 业务异常表明服务方已经执行了调用，可能因为某些原因导致未能正常执行， 而 <strong>RPC</strong> 运行时异常则有可能服务方根本没有执行，对调用方而言的异常处理策略自然需要区分。</p>
+<p>由于 <strong>RPC</strong> 固有的消耗相对本地调用高出几个数量级，本地调用的固有消耗是纳秒级，而 RPC 的固有消耗是在毫秒级。 那么对于过于轻量的计算任务就并不合适导出远程接口由独立的进程提供服务， 只有花在计算任务上时间远远高于 RPC 的固有消耗才值得导出为远程接口提供服务。</p>
+<h2 id="常见的-rpc-框架-double-grpc-motan-thrift-avro-性能对比"><a href="#常见的-rpc-框架-double-grpc-motan-thrift-avro-性能对比" class="headerlink" title="常见的 rpc 框架 double  grpc motan  thrift  avro  性能对比"></a><strong>常见的 rpc 框架 </strong>double<strong>  </strong>grpc motan  thrift  avro<strong>  性能对比</strong></h2><p><img src="/images/rpc/03.png" alt="image"><br><img src="/images/rpc/04.png" alt="image"><br><strong>下一篇讲一讲性能最好的  ZeroC——ICE</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;关于RPC&quot;&gt;&lt;a href=&quot;#关于RPC&quot; class=&quot;headerlink&quot; title=&quot;关于RPC&quot;&gt;&lt;/a&gt;关于RPC&lt;/h1&gt;&lt;p&gt;相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言&lt;/p&gt;
+&lt;h
+    
+    </summary>
+    
+      <category term="RPC" scheme="http://91fz.org/categories/RPC/"/>
+    
+    
+      <category term="RPC" scheme="http://91fz.org/tags/RPC/"/>
     
   </entry>
   
