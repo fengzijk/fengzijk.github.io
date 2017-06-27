@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Fengzijk" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="程序员疯子的博客-Code is Art, Code is Poetry!" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="阿里云部署 Web 环境（LAMP）这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。软件包中包含的软件及版本如下：nginx：1.4.4apache：2.2.29、2.4.10mysql：5.1.73、5.5.40、5.6.21php：5.2.17、5.3.29、5.4.23、5.5.7php 扩展：memcac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云部署 Web 环境（LAMP）">
+<meta property="og:url" content="http://91fz.org/2016/10/19/阿里云部署lamp/index.html">
+<meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+<meta property="og:description" content="阿里云部署 Web 环境（LAMP）这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。软件包中包含的软件及版本如下：nginx：1.4.4apache：2.2.29、2.4.10mysql：5.1.73、5.5.40、5.6.21php：5.2.17、5.3.29、5.4.23、5.5.7php 扩展：memcac">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali01.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali02.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali03.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali04.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali05.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali06.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali07.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali08.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali18.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali09.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali10.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali11.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali12.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali13.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali14.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali15.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali16.png">
+<meta property="og:image" content="http://91fz.org/images/aliyun/Imageali17.png">
+<meta property="og:updated_time" content="2017-06-26T09:26:51.418Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阿里云部署 Web 环境（LAMP）">
+<meta name="twitter:description" content="阿里云部署 Web 环境（LAMP）这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。软件包中包含的软件及版本如下：nginx：1.4.4apache：2.2.29、2.4.10mysql：5.1.73、5.5.40、5.6.21php：5.2.17、5.3.29、5.4.23、5.5.7php 扩展：memcac">
+<meta name="twitter:image" content="http://91fz.org/images/aliyun/Imageali.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://91fz.org/2016/10/19/阿里云部署lamp/"/>
+
+
+
+
+
+  <title> 阿里云部署 Web 环境（LAMP） | 程序员疯子的博客-Code is Art, Code is Poetry! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">程序员疯子的博客-Code is Art, Code is Poetry!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://91fz.org/2016/10/19/阿里云部署lamp/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fengzijk">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="程序员疯子的博客-Code is Art, Code is Poetry!" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                阿里云部署 Web 环境（LAMP）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-19T00:00:00+08:00">
+                2016-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2016/10/19/阿里云部署lamp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+ 
+        
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="阿里云部署-Web-环境（LAMP）"><a href="#阿里云部署-Web-环境（LAMP）" class="headerlink" title="阿里云部署 Web 环境（LAMP）"></a>阿里云部署 Web 环境（LAMP）</h1><p><strong>这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。</strong><br>软件包中包含的软件及版本如下：<br><strong>nginx</strong>：1.4.4<br><strong>apache</strong>：2.2.29、2.4.10<br><strong>mysql</strong>：5.1.73、5.5.40、5.6.21<br><strong>php</strong>：5.2.17、5.3.29、5.4.23、5.5.7<br><strong>php 扩展</strong>：memcache、Zend Engine/OPcache<br><strong>jdk</strong>：1.7.0<br><strong>tomcat</strong>：7.0.54<br><strong>ftp</strong>：（yum/apt-get 安装）<br><strong>phpwind</strong>：8.7 GBK<br><strong>phpmyadmin</strong>：4.1.8   </p>
+<h2 id="说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。"><a href="#说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。" class="headerlink" title="说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。   "></a><strong>说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。</strong>   </h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>部署之前，请确保：</li>
+<li>您的实例可以连接公网。</li>
+<li>已经安装用于连接 Linux 实例的工具，如 <a href="http://www.netsarang.com/products/xsh_overview.html/" target="_blank" rel="external">Xshell</a> 和 <a href="http://www.netsarang.com/products/xfp_overview.html" target="_blank" rel="external">Xftp</a>。本文将以这两个工具为例介绍操作步骤。</li>
+<li><strong>注意</strong>：阿里云 <strong>Linux</strong> 一键安装 Web 环境安装包暂不支持自动挂载 I/O 优化的数据盘。</li>
+</ul>
+<hr>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>在浏览器中打开阿里云的云市场。<br>搜索 阿里云<strong>linux</strong>一键安装<strong>web</strong>环境，然后购买该软件。<br>登录云服务器管理控制台。打开 <strong>产品与服务</strong>&gt; <strong>云市场</strong>。<br>单击 <strong>已购买的服务</strong>。在 <strong>阿里云Linux一键安装Web环境</strong>的右侧，单击 <strong>管理</strong>。<br>点击 <strong>下载地址</strong>，一键下载<strong>安装包</strong>。<br>解压缩安装包。文件夹名称为<strong>sh-1.5.5</strong>。<br><strong>说明</strong>：这是写文档时参考的文件夹名称，您下载的版本可能与此不同。<br>确保您安装了连接 Linux 实例的工具，如 Xshell 和 Xftp。<br>打开 Xshell，设置登录实例所需的信息。<br>设置连接名称。<br>协议选择 <strong>SSH</strong>。<br>输入主机公网 IP 地址。<br>端口号填 <strong>22</strong>。<br>然后单击 确定 <strong>保存</strong>。<br><img src="/images/aliyun/Imageali.png" alt="image"><br>单击左侧导航中的 <strong>连接</strong> &gt; <strong>用户身份验证</strong>，验证方法选择 <strong>Password</strong>，然后输入用户名<strong>root</strong> 和<strong>登录密码</strong>。<br><img src="/images/aliyun/Imageali01.png" alt="image">   </p>
+<p>单击 <strong>Xshell </strong>工具栏的<strong> Xftp </strong>图标 （新建文件传输），或使用快捷键<strong> CTRL + ALT + F</strong> 打开<strong>Xftp</strong>。<br><img src="/images/aliyun/Imageali02.png" alt="image"><br>然后通过 <strong>Xftp</strong> 上传一键安装包文件，直接按住左侧的本地安装文件夹，拖放到右侧 <strong>Linux</strong> 实例的目录下。<br><img src="/images/aliyun/Imageali03.png" alt="image"><br>回到 <strong>Xshell</strong> 的链接界面，依次键入以下安装命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chmod -R 777 sh-1.5.5</div><div class="line">cd sh-1.5.5</div><div class="line">./install.sh</div></pre></td></tr></table></figure>
+<p><img src="/images/aliyun/Imageali04.png" alt="image">  </p>
+<p>安装完成后执行 <strong>cat</strong> <strong>account.log </strong>命令，可以查看 <strong>account.log</strong> 文件，数据库密码在里面.   根据需要选择    1 (<strong>nginx</strong>) 或者 2 (<strong>apache</strong>)。<br>如直接回车，或输入错误字符，则默认选择 <strong>nginx</strong>。在示例中，此处选择 2。<br>注意：如果要使用 Java 环境（安装 <strong>tomcat+JDK</strong>），必须选择 nginx 服务器。<br>依次选择要安装的 <strong>nginx</strong> 或 <strong>Apache</strong> 版本、<strong>PHP</strong> 版本、<strong>MySQL</strong> 版本。<strong>nginx</strong> 和 <strong>PHP</strong> 建议选择最新的版本。<br><strong>注意</strong>：<strong>MySQL</strong> 建议选择 <strong>5.5.40</strong>，不要选择最新版本，否则可能无法正常使用。</p>
+<p><img src="/images/aliyun/Imageali05.png" alt="image">  </p>
+<p>输入 <strong>y</strong> 开始安装。一般需要半个小时左右安装完毕。看到下面这个界面，就表示安装顺利完成了<br><img src="/images/aliyun/Imageali06.png" alt="image">  </p>
+<p>检查安装结果，输入下面的命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -tunpl</div></pre></td></tr></table></figure></p>
+<p>-端口与服务信息如下：<br>-9000：PHP进程服务。如果安装的是Apache，则没有此端口。<br>-3306：MySQL服务<br>-80：HTTPD 或者 nginx 服务<br>-21：FTP服务<br><img src="/images/aliyun/Imageali07.png" alt="image"><br>输入以下命令，查看默认的 FTP 和 MySQL 的账号信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat account.log</div></pre></td></tr></table></figure></p>
+<p>输入该命令后，系统会在屏幕上显示 <strong>FTP</strong> 和 <strong>MySQL</strong> 的用户名和密码。其中 FTP 的用户名是 <strong>www</strong>，MySQL 的用户名是 <strong>root</strong>。<br> <img src="/images/aliyun/Imageali08.png" alt="image"><br> 修改 FTP 密码：用 root 登录，执行下列命令，然后输入您的 FTP 新密码:<br> <img src="/images/aliyun/Imageali18.png" alt="image"><br> 修改 <strong>MySQL</strong> 密码。<br><strong>注意</strong>： <strong>-p 和旧密码之间没有空格</strong>；而 <strong>password</strong> 和新密码之间有空格 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqladmin -uroot -p旧密码 password 新密码</div></pre></td></tr></table></figure>
+<p>  输入命令 cat /alidata/website-info.log，查看刚才安装软件的版本信息。至此所有配置结束。 </p>
+<p> <img src="/images/aliyun/Imageali09.png" alt="image"><br> 安装 phpwind 和 phpMyAdmin。可以通过访问一键安装包默认安装的 phpwind 进行安装。直接在浏览器中输入您的域名或者 IP。如果是第一次访问 phpwind，系统会自动跳转到安装页面。单击 接受 进行安装。   </p>
+<p>  <img src="/images/aliyun/Imageali10.png" alt="image"> </p>
+<p>  在创建数据页面，单击 下一步。<br>  <img src="/images/aliyun/Imageali11.png" alt="image">    </p>
+<p>  选择数据库类型为 MySQL，数据库用户名和密码填写 account.log 中的用户名和刚修改过的密码。然后设置数据库名称、管理员账号和密码等信息。单击 下一步。系统会自动安装。</p>
+<p>  <img src="/images/aliyun/Imageali12.png" alt="image"><br>  接下来访问 phpMyAdmin。在浏览器中输入域名，或者 IP/phpmyadmin 路径 （如 <a href="http://127.0.0.1/phpmyadmin" target="_blank" rel="external">http://127.0.0.1/phpmyadmin</a> ），访问 phpMyAdmin。输入 MySQL 用户名和密码，然后单击 执行，即可登录。</p>
+<p>  <img src="/images/aliyun/Imageali13.png" alt="image"><br>  从 phpMyAdmin 即可操作 MySQL。可以创建博客使用的数据库。输入数据库名称，然后排序规则选择 utf8_general_ci，单击 创建。<br>    <img src="/images/aliyun/Imageali14.png" alt="image"><br>    恭喜您！您已经成功部署了 Web 环境，可以开始制作和发布自己的站点了。</p>
+<h2 id="卸载一键安装包"><a href="#卸载一键安装包" class="headerlink" title="卸载一键安装包"></a><strong>卸载一键安装包</strong></h2><p>如果需要卸载一键安装包，执行下列命令： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chmod 777 -R sh-1.5.5</div><div class="line">cd sh-1.5.5</div><div class="line">./uninstall.sh</div></pre></td></tr></table></figure>
+<p><img src="/images/aliyun/Imageali15.png" alt="image"><br><img src="/images/aliyun/Imageali16.png" alt="image"><br><img src="/images/aliyun/Imageali17.png" alt="image"> </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Fengzijk wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+
+      
+    </div>
+  
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.jpg" alt="Fengzijk WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-img.jpg" alt="Fengzijk Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/11/QQ技术/" rel="next" title="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）">
+                <i class="fa fa-chevron-left"></i> QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/01/kotlindemo/" rel="prev" title="Kotlin初探 集成springMvc">
+                Kotlin初探 集成springMvc <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fengzijk" />
+          <p class="site-author-name" itemprop="name">Fengzijk</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fengzijk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/543439318" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/guo-zhi-feng" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-battery-3"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dmlcoding.com" title="Time渐行渐远" target="_blank">Time渐行渐远</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://oopsman.github.io" title="照见自在" target="_blank">照见自在</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.hyperj.net" title="HyperJ" target="_blank">HyperJ</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#阿里云部署-Web-环境（LAMP）"><span class="nav-number">1.</span> <span class="nav-text">阿里云部署 Web 环境（LAMP）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。"><span class="nav-number">1.1.</span> <span class="nav-text">说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。   </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">1.3.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载一键安装包"><span class="nav-number">1.4.</span> <span class="nav-text">卸载一键安装包</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengzijk</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d7ade367b7a44ab19fee7e0acbbe8d22",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
