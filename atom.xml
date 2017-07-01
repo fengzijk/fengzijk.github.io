@@ -379,6 +379,36 @@
   </entry>
   
   <entry>
+    <title>MongoDB地理位置索引的实现原理</title>
+    <link href="http://91fz.org/2015/08/30/LBS-monggo/"/>
+    <id>http://91fz.org/2015/08/30/LBS-monggo/</id>
+    <published>2015-08-29T16:00:00.000Z</published>
+    <updated>2017-07-01T14:44:02.949Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MongoDB地理位置索引的实现原理"><a href="#MongoDB地理位置索引的实现原理" class="headerlink" title="MongoDB地理位置索引的实现原理"></a>MongoDB地理位置索引的实现原理</h1><p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
+<p><strong>假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：</strong><br><img src="/images/monggo/01.png" alt="image">   </p>
+<p>单纯的［x，y］的数据是无法建立索引的，所以MongoDB在建立索引的时候，会根据相应字段的坐标计算一个可以用来做索引的hash值，这个值叫做<strong>geohash</strong>，下面我们以地图上坐标为［4，6］的点（图中红叉位置）为例。<br>我们第一步将整个地图分成等大小的四块，如下图：   </p>
+<p><img src="/images/monggo/02.png" alt="image"> </p>
+<p>划分成四块后我们可以定义这四块的值，如下（左下为00，左上为01，右下为10，右上为11）：<br>01    11<br>00    10<br>这样［4，6］点的geohash值目前为 00<br>然后再将四个小块每一块进行切割，如下：<br><img src="/images/monggo/03.png" alt="image"> </p>
+<p>这时［4，6］点位于右上区域，右上的值为11，这样［4，6］点的geohash值变为：0011<br>继续往下做两次切分：<br><img src="/images/monggo/04.png" alt="image"> </p>
+<p>最终得到［4，6］点的geohash值为：00110100<br>这样我们用这个值来做索引，则地图上点相近的点就可以转化成有相同前缀的g<strong>eohash</strong>值了。<br>我们可以看到，这个<strong>geohash</strong>值的精确度是与划分地图的次数成正比的，上例对地图划分了四次。而<strong>MongoDB</strong>默认是进行26次划分，这个值在建立索引时是可控的。具体建立二维地理位置索引的命令如下：</p>
+<p><img src="/images/monggo/05.png" alt="image"> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.map.ensureIndex(&#123;point : &quot;2d&quot;&#125;, &#123;min : 0, max : 16, bits : 4&#125;)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;MongoDB地理位置索引的实现原理&quot;&gt;&lt;a href=&quot;#MongoDB地理位置索引的实现原理&quot; class=&quot;headerlink&quot; title=&quot;MongoDB地理位置索引的实现原理&quot;&gt;&lt;/a&gt;MongoDB地理位置索引的实现原理&lt;/h1&gt;&lt;p&gt;地理位置索引
+    
+    </summary>
+    
+      <category term="MonggoDB" scheme="http://91fz.org/categories/MonggoDB/"/>
+    
+    
+      <category term="MonggoDB" scheme="http://91fz.org/tags/MonggoDB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ICE 入门到精通（一）</title>
     <link href="http://91fz.org/2015/08/21/ice/"/>
     <id>http://91fz.org/2015/08/21/ice/</id>

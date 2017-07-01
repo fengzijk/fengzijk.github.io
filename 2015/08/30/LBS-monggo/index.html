@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="盗取QQ,QQ技术," />
+  <meta name="keywords" content="MonggoDB," />
 
 
 
@@ -90,17 +90,23 @@
 
 
 
-<meta name="description" content="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！盗取QQ的方式有 (1)远程木马盗号    (2)强制破解 (3)键盘纪录    (4)钓鱼网站，-(5)恶意申诉 第一种方法《远程木马盗号》远程木马盗号的软件有“盗Q黑侠，广外幽灵，QQ机器人，QQ远程攻击器，QQ流感，阿拉QQ大盗，QQ explorer QQ密码使者">
-<meta name="keywords" content="盗取QQ,QQ技术">
+<meta name="description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta name="keywords" content="MonggoDB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）">
-<meta property="og:url" content="http://91fz.org/2015/08/11/QQ技术/index.html">
+<meta property="og:title" content="MongoDB地理位置索引的实现原理">
+<meta property="og:url" content="http://91fz.org/2015/08/30/LBS-monggo/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！盗取QQ的方式有 (1)远程木马盗号    (2)强制破解 (3)键盘纪录    (4)钓鱼网站，-(5)恶意申诉 第一种方法《远程木马盗号》远程木马盗号的软件有“盗Q黑侠，广外幽灵，QQ机器人，QQ远程攻击器，QQ流感，阿拉QQ大盗，QQ explorer QQ密码使者">
-<meta property="og:updated_time" content="2017-06-27T09:44:00.249Z">
+<meta property="og:description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta property="og:image" content="http://91fz.org/images/monggo/01.png">
+<meta property="og:image" content="http://91fz.org/images/monggo/02.png">
+<meta property="og:image" content="http://91fz.org/images/monggo/03.png">
+<meta property="og:image" content="http://91fz.org/images/monggo/04.png">
+<meta property="og:image" content="http://91fz.org/images/monggo/05.png">
+<meta property="og:updated_time" content="2017-07-01T14:44:02.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）">
-<meta name="twitter:description" content="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！盗取QQ的方式有 (1)远程木马盗号    (2)强制破解 (3)键盘纪录    (4)钓鱼网站，-(5)恶意申诉 第一种方法《远程木马盗号》远程木马盗号的软件有“盗Q黑侠，广外幽灵，QQ机器人，QQ远程攻击器，QQ流感，阿拉QQ大盗，QQ explorer QQ密码使者">
+<meta name="twitter:title" content="MongoDB地理位置索引的实现原理">
+<meta name="twitter:description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta name="twitter:image" content="http://91fz.org/images/monggo/01.png">
 
 
 
@@ -128,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://91fz.org/2015/08/11/QQ技术/"/>
+  <link rel="canonical" href="http://91fz.org/2015/08/30/LBS-monggo/"/>
 
 
 
 
 
-  <title> QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧） | 程序员疯子的博客-Code is Art, Code is Poetry! </title>
+  <title> MongoDB地理位置索引的实现原理 | 程序员疯子的博客-Code is Art, Code is Poetry! </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://91fz.org/2015/08/11/QQ技术/">
+  <link itemprop="mainEntityOfPage" href="http://91fz.org/2015/08/30/LBS-monggo/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Fengzijk">
@@ -291,7 +297,7 @@
             
             
               
-                QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）
+                MongoDB地理位置索引的实现原理
               
             
           </h2>
@@ -306,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-11T00:00:00+08:00">
-                2015-08-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-30T00:00:00+08:00">
+                2015-08-30
               </time>
             
 
@@ -329,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/以前/" itemprop="url" rel="index">
-                    <span itemprop="name">以前</span>
+                  <a href="/categories/MonggoDB/" itemprop="url" rel="index">
+                    <span itemprop="name">MonggoDB</span>
                   </a>
                 </span>
 
@@ -347,7 +353,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2015/08/11/QQ技术/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2015/08/30/LBS-monggo/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -378,29 +384,15 @@
       
 
       
-        <h1 id="QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）"><a href="#QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）" class="headerlink" title="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）"></a>QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）</h1><h2 id="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"><a href="#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！" class="headerlink" title="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"></a>首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！</h2><h3 id="盗取QQ的方式有"><a href="#盗取QQ的方式有" class="headerlink" title="盗取QQ的方式有"></a><strong>盗取QQ的方式有</strong></h3><ul>
-<li>(1)<strong>远程木马盗号</strong>   </li>
-<li><strong>(2)强制破解</strong></li>
-<li><strong>(3)键盘纪录</strong>   </li>
-<li><p><strong>(4)钓鱼网站，</strong><br>-<strong>(5)恶意申诉</strong></p>
-<h4 id="第一种方法《远程木马盗号》"><a href="#第一种方法《远程木马盗号》" class="headerlink" title="第一种方法《远程木马盗号》"></a>第一种方法《远程木马盗号》</h4><p>远程木马盗号的软件有“<strong>盗Q黑侠</strong>，<strong>广外幽灵</strong>，<strong>QQ机器人</strong>，<strong>QQ远程攻击器</strong>，<strong>QQ流感</strong>，<strong>阿拉QQ大盗</strong>，<strong>QQ explorer</strong> <strong>QQ密码使者</strong>等， 它们的使用都差不多。<br>我用的是QQ邮箱收信，去邮箱设置里把软件地址设为白名单，例如:gzf@qinan.me，然后填写收件地址(这个区别前面的是要盗的号的邮箱)。还有发件地址(就是你收密码和发邮件的邮箱).   </p>
-</li>
-<li><p><strong>第二步</strong>，生成木马(这个是软件自带)   </p>
-</li>
-<li><p><strong>第三步</strong>  相当重要，重命名该木马，取一个吸引人的名字，例如:美女裸照，然后修改后缀(这个可以百度搜软件)，木马一般都是可运行程序，<strong>后缀是exe</strong>，要骗警惕的人不容易，那我们可以把他换成图片后缀(<strong>jpg</strong>，<strong>gif</strong>，等)音乐后缀(mp3，wma等)视频后缀(mp4，Avi，flv，mrvb，等)     </p>
-</li>
-<li><strong>第四步</strong>，发邮件，一般把木马藏在附件里面，然后等那人运行木马后，<strong>我们可以在邮箱里查看密码和IP</strong>，</li>
-</ul>
-<h4 id="第二种方法是《本地破解》"><a href="#第二种方法是《本地破解》" class="headerlink" title="第二种方法是《本地破解》"></a><strong>第二种方法是《本地破解》</strong></h4><p>这种成功率低的伤不起，之所以我用过，因为比较简单，就是用QQ暴力破解，下载词典，然后输入QQ号码，先猜可能的密码，例如:我确定某人的密码是纯数字，就选数字词典，然后就等待破解，<br>如果有字母就在词典里加字母就可以了。</p>
-<h4 id="第三种《键盘纪录》"><a href="#第三种《键盘纪录》" class="headerlink" title="第三种《键盘纪录》"></a>第三种《键盘纪录》</h4><p>这种在网吧比较好用，下载键盘纪录软件(一定要能躲过还原精灵的那种，如果家庭电脑就没必要)注意点有二，第一要安装正确，二记住键盘输入纪录所在文件夹，这个是最简单的，可以直接查看。但是，如果用软件盘输入它就无能为力了！嘿嘿！   </p>
-<h4 id="第四种就是《恶意申诉》"><a href="#第四种就是《恶意申诉》" class="headerlink" title="第四种就是《恶意申诉》"></a>第四种就是《恶意申诉》</h4><p>这个成功油水肥，可以改密保问题，是我常用的一种，申诉大家都会，不多说，注意点有，你必须有2个以上的小号，加的目标号码时间越长成功率越高，三不知道的不要乱猜，据我的经验，一般申请的都是网页免费申请，不多说，具体操作，自己把握，<br>第五钓鱼网站，这个从去年开始比较流行，现在中毒转发减肥和色 情聊天的都是这么中毒的，这个需要熟悉网站制作，要求比较高，比较麻烦，就不多说！</p>
-<h5 id="下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单"><a href="#下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单" class="headerlink" title="下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单"></a>下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单</h5><h5 id="1，拒绝好奇心"><a href="#1，拒绝好奇心" class="headerlink" title="1，拒绝好奇心"></a>1，拒绝好奇心</h5><p>不要接收陌生人的离线文件，熟人不知道什么东西的情况下就也不乱接，包括邮件里面的附件。（尤其多人转发的那种邮件）</p>
-<h5 id="2，IP代理"><a href="#2，IP代理" class="headerlink" title="2，IP代理"></a>2，IP代理</h5><p>再QQ登录框下面的高级设置里(找不到你的iP地址木马无法攻击)<br>键盘纪录防范，只要软键盘输入就行了，</p>
-<h5 id="3，暴力破解防范"><a href="#3，暴力破解防范" class="headerlink" title="3，暴力破解防范"></a>3，暴力破解防范</h5><p>密码越复杂越好，你数字中加一个标点符号，破解难度就得翻几倍。</p>
-<h5 id="4，恶意申诉"><a href="#4，恶意申诉" class="headerlink" title="4，恶意申诉"></a>4，恶意申诉</h5><p>只有一个办法，绑钉自己身份证(前提是别人不知道你的身份证号码和姓名)</p>
-<h5 id="5，鱼肉，"><a href="#5，鱼肉，" class="headerlink" title="5，鱼肉，"></a>5，鱼肉，</h5><p>记住一句话就可以，天上不掉馅饼，掉陷井，不要去玩色 站，和黑基，开挂等。</p>
-<h5 id="6看好友隐身和ip地址的软件"><a href="#6看好友隐身和ip地址的软件" class="headerlink" title="6看好友隐身和ip地址的软件"></a>6看好友隐身和ip地址的软件</h5><p>qq彩虹       赛博qq</p>
-<h5 id="从初三玩-qq有6，7年了-以上就是我对各位童鞋的各种悲剧的一些建议！"><a href="#从初三玩-qq有6，7年了-以上就是我对各位童鞋的各种悲剧的一些建议！" class="headerlink" title="从初三玩 qq有6，7年了  以上就是我对各位童鞋的各种悲剧的一些建议！"></a>从初三玩 qq有6，7年了  以上就是我对各位童鞋的各种悲剧的一些建议！</h5><h3 id="（以前用手机写的-还记得是Mtk的，纯粹为了怀旧，以上软件用不了）"><a href="#（以前用手机写的-还记得是Mtk的，纯粹为了怀旧，以上软件用不了）" class="headerlink" title="（以前用手机写的 还记得是Mtk的，纯粹为了怀旧，以上软件用不了）"></a>（以前用手机写的 还记得是Mtk的，纯粹为了怀旧，以上软件用不了）</h3>
+        <h1 id="MongoDB地理位置索引的实现原理"><a href="#MongoDB地理位置索引的实现原理" class="headerlink" title="MongoDB地理位置索引的实现原理"></a>MongoDB地理位置索引的实现原理</h1><p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
+<p><strong>假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：</strong><br><img src="/images/monggo/01.png" alt="image">   </p>
+<p>单纯的［x，y］的数据是无法建立索引的，所以MongoDB在建立索引的时候，会根据相应字段的坐标计算一个可以用来做索引的hash值，这个值叫做<strong>geohash</strong>，下面我们以地图上坐标为［4，6］的点（图中红叉位置）为例。<br>我们第一步将整个地图分成等大小的四块，如下图：   </p>
+<p><img src="/images/monggo/02.png" alt="image"> </p>
+<p>划分成四块后我们可以定义这四块的值，如下（左下为00，左上为01，右下为10，右上为11）：<br>01    11<br>00    10<br>这样［4，6］点的geohash值目前为 00<br>然后再将四个小块每一块进行切割，如下：<br><img src="/images/monggo/03.png" alt="image"> </p>
+<p>这时［4，6］点位于右上区域，右上的值为11，这样［4，6］点的geohash值变为：0011<br>继续往下做两次切分：<br><img src="/images/monggo/04.png" alt="image"> </p>
+<p>最终得到［4，6］点的geohash值为：00110100<br>这样我们用这个值来做索引，则地图上点相近的点就可以转化成有相同前缀的g<strong>eohash</strong>值了。<br>我们可以看到，这个<strong>geohash</strong>值的精确度是与划分地图的次数成正比的，上例对地图划分了四次。而<strong>MongoDB</strong>默认是进行26次划分，这个值在建立索引时是可控的。具体建立二维地理位置索引的命令如下：</p>
+<p><img src="/images/monggo/05.png" alt="image"> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.map.ensureIndex(&#123;point : &quot;2d&quot;&#125;, &#123;min : 0, max : 16, bits : 4&#125;)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -418,7 +410,7 @@
   
         <div class="post-tags">
           
-            <a href="/tags/盗取QQ-QQ技术/" rel="tag"># 盗取QQ,QQ技术</a>
+            <a href="/tags/MonggoDB/" rel="tag"># MonggoDB</a>
           
         </div>
       
@@ -459,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/10/安装Zero-ICE/" rel="next" title="安装ZeroC-ICE">
-                <i class="fa fa-chevron-left"></i> 安装ZeroC-ICE
+              <a href="/2015/08/21/ice/" rel="next" title="ICE 入门到精通（一）">
+                <i class="fa fa-chevron-left"></i> ICE 入门到精通（一）
               </a>
             
           </div>
@@ -469,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/20/rpc/" rel="prev" title="关于RPC的总结">
-                关于RPC的总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/21/dubboone/" rel="prev" title="服务治理框架之DUBBO">
+                服务治理框架之DUBBO <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -654,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）"><span class="nav-number">1.</span> <span class="nav-text">QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"><span class="nav-number">1.1.</span> <span class="nav-text">首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#盗取QQ的方式有"><span class="nav-number">1.1.1.</span> <span class="nav-text">盗取QQ的方式有</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种方法《远程木马盗号》"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">第一种方法《远程木马盗号》</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种方法是《本地破解》"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">第二种方法是《本地破解》</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三种《键盘纪录》"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">第三种《键盘纪录》</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四种就是《恶意申诉》"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">第四种就是《恶意申诉》</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单"><span class="nav-number">1.1.1.4.1.</span> <span class="nav-text">下面我根据自己多年的经验给大家提点意见其实，防范木马盗号很简单</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1，拒绝好奇心"><span class="nav-number">1.1.1.4.2.</span> <span class="nav-text">1，拒绝好奇心</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2，IP代理"><span class="nav-number">1.1.1.4.3.</span> <span class="nav-text">2，IP代理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3，暴力破解防范"><span class="nav-number">1.1.1.4.4.</span> <span class="nav-text">3，暴力破解防范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4，恶意申诉"><span class="nav-number">1.1.1.4.5.</span> <span class="nav-text">4，恶意申诉</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5，鱼肉，"><span class="nav-number">1.1.1.4.6.</span> <span class="nav-text">5，鱼肉，</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6看好友隐身和ip地址的软件"><span class="nav-number">1.1.1.4.7.</span> <span class="nav-text">6看好友隐身和ip地址的软件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从初三玩-qq有6，7年了-以上就是我对各位童鞋的各种悲剧的一些建议！"><span class="nav-number">1.1.1.4.8.</span> <span class="nav-text">从初三玩 qq有6，7年了  以上就是我对各位童鞋的各种悲剧的一些建议！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（以前用手机写的-还记得是Mtk的，纯粹为了怀旧，以上软件用不了）"><span class="nav-number">1.1.2.</span> <span class="nav-text">（以前用手机写的 还记得是Mtk的，纯粹为了怀旧，以上软件用不了）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MongoDB地理位置索引的实现原理"><span class="nav-number">1.</span> <span class="nav-text">MongoDB地理位置索引的实现原理</span></a></li></ol></div>
             
 
           </div>
