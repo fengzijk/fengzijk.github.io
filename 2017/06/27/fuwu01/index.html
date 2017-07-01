@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="服务治理,SOA,微服务," />
+  <meta name="keywords" content="微服务,SOA,服务治理," />
 
 
 
@@ -90,13 +90,13 @@
 
 
 
-<meta name="description" content="谈谈服务治理与微服务近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到">
-<meta name="keywords" content="服务治理,SOA,微服务">
+<meta name="description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
+<meta name="keywords" content="微服务,SOA,服务治理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谈谈服务治理与微服务">
 <meta property="og:url" content="http://91fz.org/2017/06/27/fuwu01/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="谈谈服务治理与微服务近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到">
+<meta property="og:description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
 <meta property="og:image" content="http://91fz.org/images/fuwu/01.png">
 <meta property="og:image" content="http://91fz.org/images/fuwu/02.png">
 <meta property="og:image" content="http://91fz.org/images/fuwu/03.png">
@@ -105,10 +105,10 @@
 <meta property="og:image" content="http://91fz.org/images/fuwu/06.png">
 <meta property="og:image" content="http://91fz.org/images/fuwu/07.png">
 <meta property="og:image" content="http://91fz.org/images/fuwu/08.png">
-<meta property="og:updated_time" content="2017-07-01T15:42:15.459Z">
+<meta property="og:updated_time" content="2017-07-01T16:13:47.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈服务治理与微服务">
-<meta name="twitter:description" content="谈谈服务治理与微服务近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到">
+<meta name="twitter:description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
 <meta name="twitter:image" content="http://91fz.org/images/fuwu/01.png">
 
 
@@ -387,7 +387,7 @@
       
 
       
-        <h1 id="谈谈服务治理与微服务"><a href="#谈谈服务治理与微服务" class="headerlink" title="谈谈服务治理与微服务"></a>谈谈服务治理与微服务</h1><p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
+        <p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
 <p>先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。</p>
 <h2 id="互联网架构演变"><a href="#互联网架构演变" class="headerlink" title="互联网架构演变"></a>互联网架构演变</h2><h3 id="单体体架构"><a href="#单体体架构" class="headerlink" title="单体体架构"></a>单体体架构</h3><p>在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈不上架构，但也可以说是很好的架构，因为它足够简单。 如下图：</p>
 <p><img src="/images/fuwu/01.png" alt="image"><br><img src="/images/fuwu/02.png" alt="image"></p>
@@ -518,11 +518,11 @@
   
         <div class="post-tags">
           
-            <a href="/tags/服务治理/" rel="tag"># 服务治理</a>
+            <a href="/tags/微服务/" rel="tag"># 微服务</a>
           
             <a href="/tags/SOA/" rel="tag"># SOA</a>
           
-            <a href="/tags/微服务/" rel="tag"># 微服务</a>
+            <a href="/tags/服务治理/" rel="tag"># 服务治理</a>
           
         </div>
       
@@ -754,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谈谈服务治理与微服务"><span class="nav-number">1.</span> <span class="nav-text">谈谈服务治理与微服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网架构演变"><span class="nav-number">1.1.</span> <span class="nav-text">互联网架构演变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体体架构"><span class="nav-number">1.1.1.</span> <span class="nav-text">单体体架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC架构"><span class="nav-number">1.1.2.</span> <span class="nav-text">MVC架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多应用架构"><span class="nav-number">1.1.3.</span> <span class="nav-text">多应用架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式架构"><span class="nav-number">1.1.4.</span> <span class="nav-text">分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOA架构"><span class="nav-number">1.1.5.</span> <span class="nav-text">SOA架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SOA的好处"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">SOA的好处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务化面临的挑战"><span class="nav-number">1.1.6.</span> <span class="nav-text">服务化面临的挑战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务治理"><span class="nav-number">1.2.</span> <span class="nav-text">服务治理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微服务"><span class="nav-number">1.3.</span> <span class="nav-text">微服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#微服务的特点"><span class="nav-number">1.3.0.0.1.</span> <span class="nav-text">微服务的特点</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网架构演变"><span class="nav-number">1.</span> <span class="nav-text">互联网架构演变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体体架构"><span class="nav-number">1.1.</span> <span class="nav-text">单体体架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC架构"><span class="nav-number">1.2.</span> <span class="nav-text">MVC架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多应用架构"><span class="nav-number">1.3.</span> <span class="nav-text">多应用架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式架构"><span class="nav-number">1.4.</span> <span class="nav-text">分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOA架构"><span class="nav-number">1.5.</span> <span class="nav-text">SOA架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SOA的好处"><span class="nav-number">1.5.1.</span> <span class="nav-text">SOA的好处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务化面临的挑战"><span class="nav-number">1.6.</span> <span class="nav-text">服务化面临的挑战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务治理"><span class="nav-number">2.</span> <span class="nav-text">服务治理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微服务"><span class="nav-number">3.</span> <span class="nav-text">微服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#微服务的特点"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">微服务的特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -90,22 +90,22 @@
 
 
 
-<meta name="description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta name="description" content="地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：    单纯的［x，y］的数据是无法建立索">
 <meta name="keywords" content="MonggoDB,NOsql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB地理位置索引的实现原理">
 <meta property="og:url" content="http://91fz.org/2015/08/30/LBS-monggo/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta property="og:description" content="地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：    单纯的［x，y］的数据是无法建立索">
 <meta property="og:image" content="http://91fz.org/images/monggo/01.png">
 <meta property="og:image" content="http://91fz.org/images/monggo/02.png">
 <meta property="og:image" content="http://91fz.org/images/monggo/03.png">
 <meta property="og:image" content="http://91fz.org/images/monggo/04.png">
 <meta property="og:image" content="http://91fz.org/images/monggo/05.png">
-<meta property="og:updated_time" content="2017-07-01T15:41:26.051Z">
+<meta property="og:updated_time" content="2017-07-01T16:12:47.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB地理位置索引的实现原理">
-<meta name="twitter:description" content="MongoDB地理位置索引的实现原理地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：">
+<meta name="twitter:description" content="地理位置索引支持是MongoDB的一大亮点，这也是全球最流行的LBS服务foursquare 选择MongoDB的原因之一。我们知道，通常的数据库索引结构是B+Tree，怎么样才能将地理位置转化为可建立B+Tree的形式呢，下面我会为大家分析下。    假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：    单纯的［x，y］的数据是无法建立索">
 <meta name="twitter:image" content="http://91fz.org/images/monggo/01.png">
 
 
@@ -384,7 +384,7 @@
       
 
       
-        <h1 id="MongoDB地理位置索引的实现原理"><a href="#MongoDB地理位置索引的实现原理" class="headerlink" title="MongoDB地理位置索引的实现原理"></a>MongoDB地理位置索引的实现原理</h1><p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
+        <p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
 <p><strong>假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：</strong><br><img src="/images/monggo/01.png" alt="image">   </p>
 <p>单纯的［x，y］的数据是无法建立索引的，所以MongoDB在建立索引的时候，会根据相应字段的坐标计算一个可以用来做索引的hash值，这个值叫做<strong>geohash</strong>，下面我们以地图上坐标为［4，6］的点（图中红叉位置）为例。<br>我们第一步将整个地图分成等大小的四块，如下图：   </p>
 <p><img src="/images/monggo/02.png" alt="image"> </p>
@@ -514,17 +514,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -638,22 +629,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MongoDB地理位置索引的实现原理"><span class="nav-number">1.</span> <span class="nav-text">MongoDB地理位置索引的实现原理</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>

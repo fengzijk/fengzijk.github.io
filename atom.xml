@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://91fz.org/"/>
-  <updated>2017-07-01T15:42:15.459Z</updated>
+  <updated>2017-07-01T16:13:47.648Z</updated>
   <id>http://91fz.org/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://91fz.org/2017/06/27/fuwu01/"/>
     <id>http://91fz.org/2017/06/27/fuwu01/</id>
     <published>2017-06-26T16:00:00.000Z</published>
-    <updated>2017-07-01T15:42:15.459Z</updated>
+    <updated>2017-07-01T16:13:47.648Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="谈谈服务治理与微服务"><a href="#谈谈服务治理与微服务" class="headerlink" title="谈谈服务治理与微服务"></a>谈谈服务治理与微服务</h1><p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
+    <content type="html"><![CDATA[<p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
 <p>先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。</p>
 <h2 id="互联网架构演变"><a href="#互联网架构演变" class="headerlink" title="互联网架构演变"></a>互联网架构演变</h2><h3 id="单体体架构"><a href="#单体体架构" class="headerlink" title="单体体架构"></a>单体体架构</h3><p>在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈不上架构，但也可以说是很好的架构，因为它足够简单。 如下图：</p>
 <p><img src="/images/fuwu/01.png" alt="image"><br><img src="/images/fuwu/02.png" alt="image"></p>
@@ -139,18 +139,19 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;谈谈服务治理与微服务&quot;&gt;&lt;a href=&quot;#谈谈服务治理与微服务&quot; class=&quot;headerlink&quot; title=&quot;谈谈服务治理与微服务&quot;&gt;&lt;/a&gt;谈谈服务治理与微服务&lt;/h1&gt;&lt;p&gt;近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享
+      &lt;p&gt;近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    &lt;/p&gt;
+&lt;p&gt;先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸
     
     </summary>
     
       <category term="微服务 SOA  服务治理" scheme="http://91fz.org/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
     
-      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
+      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
       <category term="SOA" scheme="http://91fz.org/tags/SOA/"/>
     
-      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
   </entry>
   
@@ -223,9 +224,9 @@
     <link href="http://91fz.org/2016/10/19/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2lamp/"/>
     <id>http://91fz.org/2016/10/19/阿里云部署lamp/</id>
     <published>2016-10-18T16:00:00.000Z</published>
-    <updated>2017-06-26T09:26:51.418Z</updated>
+    <updated>2017-07-01T16:16:22.406Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="阿里云部署-Web-环境（LAMP）"><a href="#阿里云部署-Web-环境（LAMP）" class="headerlink" title="阿里云部署 Web 环境（LAMP）"></a>阿里云部署 Web 环境（LAMP）</h1><p><strong>这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。</strong><br>软件包中包含的软件及版本如下：<br><strong>nginx</strong>：1.4.4<br><strong>apache</strong>：2.2.29、2.4.10<br><strong>mysql</strong>：5.1.73、5.5.40、5.6.21<br><strong>php</strong>：5.2.17、5.3.29、5.4.23、5.5.7<br><strong>php 扩展</strong>：memcache、Zend Engine/OPcache<br><strong>jdk</strong>：1.7.0<br><strong>tomcat</strong>：7.0.54<br><strong>ftp</strong>：（yum/apt-get 安装）<br><strong>phpwind</strong>：8.7 GBK<br><strong>phpmyadmin</strong>：4.1.8   </p>
+    <content type="html"><![CDATA[<p><strong>这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。</strong><br>软件包中包含的软件及版本如下：<br><strong>nginx</strong>：1.4.4<br><strong>apache</strong>：2.2.29、2.4.10<br><strong>mysql</strong>：5.1.73、5.5.40、5.6.21<br><strong>php</strong>：5.2.17、5.3.29、5.4.23、5.5.7<br><strong>php 扩展</strong>：memcache、Zend Engine/OPcache<br><strong>jdk</strong>：1.7.0<br><strong>tomcat</strong>：7.0.54<br><strong>ftp</strong>：（yum/apt-get 安装）<br><strong>phpwind</strong>：8.7 GBK<br><strong>phpmyadmin</strong>：4.1.8   </p>
 <h2 id="说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。"><a href="#说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。" class="headerlink" title="说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。   "></a><strong>说明：这是写文档时参考的软件版本。您下载的版本可能与此不同。</strong>   </h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>部署之前，请确保：</li>
 <li>您的实例可以连接公网。</li>
@@ -258,7 +259,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;阿里云部署-Web-环境（LAMP）&quot;&gt;&lt;a href=&quot;#阿里云部署-Web-环境（LAMP）&quot; class=&quot;headerlink&quot; title=&quot;阿里云部署 Web 环境（LAMP）&quot;&gt;&lt;/a&gt;阿里云部署 Web 环境（LAMP）&lt;/h1&gt;&lt;p&gt;&lt;stron
+      &lt;p&gt;&lt;strong&gt;这里给大家介绍如何使用阿里云镜像，一键部署 Web 环境，包括安装 Nginx、MySQL、phpwind 和 phpMyAdmin。&lt;/strong&gt;&lt;br&gt;软件包中包含的软件及版本如下：&lt;br&gt;&lt;strong&gt;nginx&lt;/strong&gt;：1.4.4&lt;b
     
     </summary>
     
@@ -270,9 +271,9 @@
     <link href="http://91fz.org/2016/03/21/dubboone/"/>
     <id>http://91fz.org/2016/03/21/dubboone/</id>
     <published>2016-03-20T16:00:00.000Z</published>
-    <updated>2017-07-01T15:40:36.875Z</updated>
+    <updated>2017-07-01T16:12:59.281Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="服务治理框架之DUBBO"><a href="#服务治理框架之DUBBO" class="headerlink" title="服务治理框架之DUBBO"></a>服务治理框架之DUBBO</h1><h2 id="什么是dubbo？"><a href="#什么是dubbo？" class="headerlink" title="什么是dubbo？"></a>什么是dubbo？</h2><p><strong>Dubbo</strong>是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（<strong>Provider</strong>）和服务消费方（<strong>Consumer</strong>）两个角色。关<strong>于注册中心</strong>、<strong>协议支持</strong>、<strong>服务监控</strong>等内容，但遗憾的的是现在已经停止更新了。由当当网进行维护，<strong>升级为dubbox</strong>，<strong>支持了rest</strong>。<strong>更新了spring等</strong>，<strong>而在阿里内部则又HSF框架代替</strong>。</p>
+    <content type="html"><![CDATA[<h2 id="什么是dubbo？"><a href="#什么是dubbo？" class="headerlink" title="什么是dubbo？"></a>什么是dubbo？</h2><p><strong>Dubbo</strong>是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（<strong>Provider</strong>）和服务消费方（<strong>Consumer</strong>）两个角色。关<strong>于注册中心</strong>、<strong>协议支持</strong>、<strong>服务监控</strong>等内容，但遗憾的的是现在已经停止更新了。由当当网进行维护，<strong>升级为dubbox</strong>，<strong>支持了rest</strong>。<strong>更新了spring等</strong>，<strong>而在阿里内部则又HSF框架代替</strong>。</p>
 <h2 id="Dubbo的总体架构"><a href="#Dubbo的总体架构" class="headerlink" title="Dubbo的总体架构"></a>Dubbo的总体架构</h2><p><img src="/images/dubbo/01.png" alt="image"><br><strong>Dubbo框架设计一共划分了10个层</strong>，而最上面的<strong>Service</strong>层是留给实际想要使用<strong>Dubbo</strong>开发分布式服务的开发者实现业务逻辑的接口层。图中左边淡蓝背景的为服务消费方使用的接口，右边淡绿色背景的为服务提供方使用的接口，     位于中轴线上的为双方都用到的接口。<br>下面，结合<strong>Dubbo官方文档</strong>，我们分别理解一下框架分层架构中，各个层次的设计要点：</p>
 <ul>
 <li><p><strong>服务接口层（Service</strong>）：该层是与实际业务逻辑相关的，根据服务提供方和服务消费方的业务设计对应的接口和实现。   </p>
@@ -373,18 +374,18 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;服务治理框架之DUBBO&quot;&gt;&lt;a href=&quot;#服务治理框架之DUBBO&quot; class=&quot;headerlink&quot; title=&quot;服务治理框架之DUBBO&quot;&gt;&lt;/a&gt;服务治理框架之DUBBO&lt;/h1&gt;&lt;h2 id=&quot;什么是dubbo？&quot;&gt;&lt;a href=&quot;#什么是d
+      &lt;h2 id=&quot;什么是dubbo？&quot;&gt;&lt;a href=&quot;#什么是dubbo？&quot; class=&quot;headerlink&quot; title=&quot;什么是dubbo？&quot;&gt;&lt;/a&gt;什么是dubbo？&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Dubbo&lt;/strong&gt;是阿里巴巴开源的分布式服务框架，它是按照
     
     </summary>
     
       <category term="微服务 SOA  服务治理" scheme="http://91fz.org/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
     
-      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
+      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
       <category term="SOA" scheme="http://91fz.org/tags/SOA/"/>
     
-      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
   </entry>
   
@@ -393,9 +394,9 @@
     <link href="http://91fz.org/2015/08/30/LBS-monggo/"/>
     <id>http://91fz.org/2015/08/30/LBS-monggo/</id>
     <published>2015-08-29T16:00:00.000Z</published>
-    <updated>2017-07-01T15:41:26.051Z</updated>
+    <updated>2017-07-01T16:12:47.722Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="MongoDB地理位置索引的实现原理"><a href="#MongoDB地理位置索引的实现原理" class="headerlink" title="MongoDB地理位置索引的实现原理"></a>MongoDB地理位置索引的实现原理</h1><p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
+    <content type="html"><![CDATA[<p>地理位置索引支持是<strong>MongoDB</strong>的一大亮点，这也是全球最流行<strong>的LBS服务foursquare 选择MongoDB的原因之一</strong>。<br>我们知道，通常的数据库索引结构是<strong>B+Tree</strong>，怎么样才能将地理位置转化为可建立<strong>B+Tree</strong>的形式呢，下面我会为大家分析下。   </p>
 <p><strong>假设我们将需要索引的整个地图分成16×16的方格，如下图（左下角为坐标0,0 右上角为坐标16,16）：</strong><br><img src="/images/monggo/01.png" alt="image">   </p>
 <p>单纯的［x，y］的数据是无法建立索引的，所以MongoDB在建立索引的时候，会根据相应字段的坐标计算一个可以用来做索引的hash值，这个值叫做<strong>geohash</strong>，下面我们以地图上坐标为［4，6］的点（图中红叉位置）为例。<br>我们第一步将整个地图分成等大小的四块，如下图：   </p>
 <p><img src="/images/monggo/02.png" alt="image"> </p>
@@ -407,7 +408,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;MongoDB地理位置索引的实现原理&quot;&gt;&lt;a href=&quot;#MongoDB地理位置索引的实现原理&quot; class=&quot;headerlink&quot; title=&quot;MongoDB地理位置索引的实现原理&quot;&gt;&lt;/a&gt;MongoDB地理位置索引的实现原理&lt;/h1&gt;&lt;p&gt;地理位置索引
+      &lt;p&gt;地理位置索引支持是&lt;strong&gt;MongoDB&lt;/strong&gt;的一大亮点，这也是全球最流行&lt;strong&gt;的LBS服务foursquare 选择MongoDB的原因之一&lt;/strong&gt;。&lt;br&gt;我们知道，通常的数据库索引结构是&lt;strong&gt;B+Tree&lt;/stron
     
     </summary>
     
@@ -425,9 +426,9 @@
     <link href="http://91fz.org/2015/08/21/ice/"/>
     <id>http://91fz.org/2015/08/21/ice/</id>
     <published>2015-08-20T16:00:00.000Z</published>
-    <updated>2017-07-01T15:41:13.433Z</updated>
+    <updated>2017-07-01T16:13:09.380Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ICE-入门到精通（一）"><a href="#ICE-入门到精通（一）" class="headerlink" title="ICE 入门到精通（一）"></a>ICE 入门到精通（一）</h1><p>关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。</p>
+    <content type="html"><![CDATA[<p>关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。</p>
 <h2 id="什么是ICE"><a href="#什么是ICE" class="headerlink" title="什么是ICE"></a>什么是ICE</h2><p>ICE的全称是 <strong>Internet Communications Engine网络(互联网)通讯引擎</strong><br>它是由Zeroc公司开发的一套开源中间件系统，<strong>与DCOM</strong>,<strong>CORBA</strong>,<strong>WEB SERVICE</strong> <strong>Dcom类似</strong>，<strong>支持RPC</strong>协议，但是在效率上却高于前面所述几种技术方案，是一种适用于各种环境的面向对象的中间件平台：客户和服务器可以用不同的编程语言来编写， 可以运行在不同的操作系统和系统架构上，并且可以使用多种网络技术经行通信（<strong>例如TCP</strong>、<strong>UDP</strong>、<strong>SSL等</strong>），这给我们的应用和部署带来很大的便捷性。</p>
 <h2 id="ICE的优点"><a href="#ICE的优点" class="headerlink" title="ICE的优点"></a>ICE的优点</h2><ul>
 <li><p>跨平台，支持多种语言</p>
@@ -484,7 +485,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;ICE-入门到精通（一）&quot;&gt;&lt;a href=&quot;#ICE-入门到精通（一）&quot; class=&quot;headerlink&quot; title=&quot;ICE 入门到精通（一）&quot;&gt;&lt;/a&gt;ICE 入门到精通（一）&lt;/h1&gt;&lt;p&gt;关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用
+      &lt;p&gt;关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。&lt;/p&gt;
+&lt;h2 id=&quot;什么是ICE&quot;&gt;&lt;a href=&quot;#什么是ICE&quot; cla
     
     </summary>
     
@@ -502,9 +504,9 @@
     <link href="http://91fz.org/2015/08/20/rpc/"/>
     <id>http://91fz.org/2015/08/20/rpc/</id>
     <published>2015-08-19T16:00:00.000Z</published>
-    <updated>2017-07-01T15:46:04.921Z</updated>
+    <updated>2017-07-01T16:13:18.673Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="关于RPC"><a href="#关于RPC" class="headerlink" title="关于RPC"></a>关于RPC</h1><p>相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言</p>
+    <content type="html"><![CDATA[<p>相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言</p>
 <h2 id="什么是RPC"><a href="#什么是RPC" class="headerlink" title="什么是RPC"></a>什么是RPC</h2><p>它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。<strong>RPC</strong>协议假定某些传输协议的存在，如<strong>TCP</strong>或<strong>UDP</strong>，为通信程序之间携带信息数据。<br>RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
 <p>通俗点就是它允许程序调用另一个地址空间（通常是共享网络的另一台机器上）的过程或函数，而不用程序员显式编码这个远程调用的细节。即程序员无论是调用本地的还是远程的，本质上编写的调用代码基本相同。</p>
 <h2 id="RPC起源"><a href="#RPC起源" class="headerlink" title="RPC起源"></a>RPC起源</h2><p>RPC 这个概念术语在上世纪 80 年代由 <strong>Bruce</strong> <strong>Jay</strong> <strong>Nelson</strong> 提出。这里我们追溯下当初开发 <strong>RPC</strong> 的原动机是什么？在 <strong>Nelson</strong> 的论文 “<strong>Implementing Remote Procedure Calls</strong>“ 中他提到了几点：</p>
@@ -591,8 +593,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;关于RPC&quot;&gt;&lt;a href=&quot;#关于RPC&quot; class=&quot;headerlink&quot; title=&quot;关于RPC&quot;&gt;&lt;/a&gt;关于RPC&lt;/h1&gt;&lt;p&gt;相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言&lt;/p&gt;
-&lt;h
+      &lt;p&gt;相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言&lt;/p&gt;
+&lt;h2 id=&quot;什么是RPC&quot;&gt;&lt;a href=&quot;#什么是RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是RPC&quot;&gt;&lt;/a&gt;什么是RPC&lt;/h
     
     </summary>
     
@@ -610,9 +612,9 @@
     <link href="http://91fz.org/2015/08/11/QQ%E6%8A%80%E6%9C%AF/"/>
     <id>http://91fz.org/2015/08/11/QQ技术/</id>
     <published>2015-08-10T16:00:00.000Z</published>
-    <updated>2017-07-01T15:44:50.967Z</updated>
+    <updated>2017-07-01T16:16:51.327Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）"><a href="#QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）" class="headerlink" title="QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）"></a>QQ实用技术（从以前的博客拿过来的2011年手机写的 纯粹怀旧）</h1><h2 id="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"><a href="#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！" class="headerlink" title="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"></a>首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！</h2><h3 id="盗取QQ的方式有"><a href="#盗取QQ的方式有" class="headerlink" title="盗取QQ的方式有"></a><strong>盗取QQ的方式有</strong></h3><ul>
+    <content type="html"><![CDATA[<h2 id="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"><a href="#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！" class="headerlink" title="首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！"></a>首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！</h2><h3 id="盗取QQ的方式有"><a href="#盗取QQ的方式有" class="headerlink" title="盗取QQ的方式有"></a><strong>盗取QQ的方式有</strong></h3><ul>
 <li>(1)<strong>远程木马盗号</strong>   </li>
 <li><strong>(2)强制破解</strong></li>
 <li><strong>(3)键盘纪录</strong>   </li>
@@ -638,7 +640,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）&quot;&gt;&lt;a href=&quot;#QQ实用技术（从以前的博客拿过来的2011年手机写的-纯粹怀旧）&quot; class=&quot;headerlink&quot; title=&quot;QQ实用技术（从以前的博客拿过来的2011年手机写的 纯
+      &lt;h2 id=&quot;首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！&quot;&gt;&lt;a href=&quot;#首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范措施！！&quot; class=&quot;headerlink&quot; title=&quot;首先，我给大家介绍几种下盗号有哪几种方法，然后在讲解防范
     
     </summary>
     
@@ -677,9 +679,9 @@
     <link href="http://91fz.org/2014/06/28/javare/"/>
     <id>http://91fz.org/2014/06/28/javare/</id>
     <published>2014-06-27T16:00:00.000Z</published>
-    <updated>2017-07-01T16:08:26.271Z</updated>
+    <updated>2017-07-01T16:12:39.317Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="JAVA实现类似百度文库在线浏览"><a href="#JAVA实现类似百度文库在线浏览" class="headerlink" title="JAVA实现类似百度文库在线浏览"></a>JAVA实现类似百度文库在线浏览</h1><p>前言：由于是个教育评比项目，需求要上传Excel，word，等 还要求在线浏览，本来刚参加工作一年，对我来说难度还是有的。查了好多资料发现网上的都千篇一律，真的头疼，而且时间也很短。但还是做出来了，写个博客，记录下<br>时间是 2014年6月28日23:24:23</p>
+    <content type="html"><![CDATA[<p>前言：由于是个教育评比项目，需求要上传Excel，word，等 还要求在线浏览，本来刚参加工作一年，对我来说难度还是有的。查了好多资料发现网上的都千篇一律，真的头疼，而且时间也很短。但还是做出来了，写个博客，记录下<br>时间是 2014年6月28日23:24:23</p>
 <h2 id="研究阶段"><a href="#研究阶段" class="headerlink" title="研究阶段"></a>研究阶段</h2><p> 发现网上大多都是一下几种实现方式 </p>
 <ul>
 <li><p>1.Txt/Word/Excel/PPT=&gt;PDF(OpenOffice+JodConverter)=&gt;SWF(pdf2swf)=&gt;FlexPaper浏览  </p>
@@ -699,7 +701,7 @@
 <li><strong>Swftools(pdf2swf)</strong>  <a href="http://dldx.csdn.net/fd.php?i=389133735472350&amp;s=2f7430ad3c00cca78ada8b4671a50b24" target="_blank" rel="external">http://dldx.csdn.net/fd.php?i=389133735472350&amp;s=2f7430ad3c00cca78ada8b4671a50b24</a></li>
 <li><strong>FlexPaper</strong>    <a href="http://flexpaper.googlecode.com/files/FlexPaper_1.4.5_flash.zip" target="_blank" rel="external">http://flexpaper.googlecode.com/files/FlexPaper_1.4.5_flash.zip</a>   </li>
 </ul>
-<p>资料方面，大致搜索了百度文库和开源中国上的一些资料，其实都一样。感觉都是互相装在，不过前辈们已经为我们做了很多了，再次谢过各位分享的前辈。</p>
+<p>资料方面，大致搜索了百度文库和开源中国上的一些资料，其实都一样。感觉都是互相转载，不过前辈们已经为我们做了很多了，再次谢过各位分享的前辈。</p>
 <h2 id="项目源码："><a href="#项目源码：" class="headerlink" title="项目源码："></a>项目源码：</h2><h3 id="ConvertServlet的servlet处理类代码如下："><a href="#ConvertServlet的servlet处理类代码如下：" class="headerlink" title="ConvertServlet的servlet处理类代码如下："></a>ConvertServlet的servlet处理类代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">package org.timothy.test.servlet;</div><div class="line"></div><div class="line">import java.io.File;</div><div class="line">import java.io.IOException;</div><div class="line"></div><div class="line">import javax.servlet.ServletException;</div><div class="line">import javax.servlet.http.HttpServlet;</div><div class="line">import javax.servlet.http.HttpServletRequest;</div><div class="line">import javax.servlet.http.HttpServletResponse;</div><div class="line">import javax.servlet.http.HttpSession;</div><div class="line"></div><div class="line">import com.artofsolving.jodconverter.DocumentConverter;</div><div class="line">import com.artofsolving.jodconverter.openoffice.connection.OpenOfficeConnection;</div><div class="line">import com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection;</div><div class="line">import com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter;</div><div class="line"></div><div class="line">public class ConvertServlet extends HttpServlet &#123;</div><div class="line">	private File sourceFile;		//转换源文件</div><div class="line">	private File pdfFile;			//PDF目标文件</div><div class="line">	private File swfFile;			//SWF目标文件</div><div class="line">	private Runtime r;				</div><div class="line">	</div><div class="line">	public void init() throws ServletException &#123;</div><div class="line">		sourceFile = new File(&quot;G:\\tomcat6\\webapps\\readonline\\swfFile\\1.doc&quot;);</div><div class="line">		pdfFile = new File(&quot;G:\\tomcat6\\webapps\\readonline\\swfFile\\1.pdf&quot;);</div><div class="line">		swfFile = new File(&quot;G:\\tomcat6\\webapps\\readonline\\swfFile\\Paper.swf&quot;);</div><div class="line">		System.out.println(&quot;第一步：生成文件对象，准备转换&quot;);</div><div class="line">	&#125;</div><div class="line">	public void doGet(HttpServletRequest request, HttpServletResponse response)</div><div class="line">			throws ServletException, IOException &#123;</div><div class="line"></div><div class="line">		doPost(request, response);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * The doPost method of the servlet. &lt;br&gt;</div><div class="line">	 *</div><div class="line">	 * This method is called when a form has its tag value method equals to post.</div><div class="line">	 * </div><div class="line">	 * @param request the request send by the client to the server</div><div class="line">	 * @param response the response send by the server to the client</div><div class="line">	 * @throws ServletException if an error occurred</div><div class="line">	 * @throws IOException if an error occurred</div><div class="line">	 */</div><div class="line">	public void doPost(HttpServletRequest request, HttpServletResponse response)</div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		response.setContentType(&quot;text/html&quot;);</div><div class="line">		//转换成pdf文件</div><div class="line">		if(sourceFile.exists()) &#123;</div><div class="line">			if(!pdfFile.exists()) &#123;</div><div class="line">				OpenOfficeConnection connection = new SocketOpenOfficeConnection(8100);</div><div class="line">				try &#123;</div><div class="line">					connection.connect();</div><div class="line">					DocumentConverter converter = new OpenOfficeDocumentConverter(connection);   </div><div class="line">					converter.convert(sourceFile, pdfFile);</div><div class="line">					pdfFile.createNewFile();</div><div class="line">					connection.disconnect();  </div><div class="line">					System.out.println(&quot;第二步：转换为PDF格式	路径&quot; + pdfFile.getPath());</div><div class="line">				&#125; catch (java.net.ConnectException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">					System.out.println(&quot;OpenOffice服务未启动&quot;);</div><div class="line">					throw e;</div><div class="line">				&#125; catch (com.artofsolving.jodconverter.openoffice.connection.OpenOfficeException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">					System.out.println(&quot;读取文件失败&quot;);</div><div class="line">					throw e;</div><div class="line">				&#125; catch (Exception e)&#123;</div><div class="line">					e.printStackTrace();</div><div class="line">					try &#123;</div><div class="line">						throw e;</div><div class="line">					&#125; catch (Exception e1) &#123;</div><div class="line">						e1.printStackTrace();</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125; else &#123;</div><div class="line">				System.out.println(&quot;已转换为PDF，无需再次转换&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125; else &#123;</div><div class="line">			System.out.println(&quot;要转换的文件不存在&quot;);</div><div class="line">		&#125; </div><div class="line">		//转换成swf文件</div><div class="line">		r = Runtime.getRuntime();</div><div class="line">		</div><div class="line">		new Thread()&#123;</div><div class="line"></div><div class="line">			@Override</div><div class="line">			public void run() &#123;</div><div class="line">				if(!swfFile.exists())&#123;</div><div class="line">					</div><div class="line">					if(pdfFile.exists()) &#123;</div><div class="line">						try &#123;</div><div class="line">							System.out.println(&quot;E:/SWFTools/pdf2swf.exe &quot; + pdfFile.getPath() +</div><div class="line">									&quot; -o &quot; + swfFile.getPath() + &quot; -T 9&quot;);</div><div class="line">							</div><div class="line">							Process p = r.exec(&quot;E:/SWFTools/pdf2swf.exe &quot; + pdfFile.getPath() + &quot; -o &quot; + swfFile.getPath() + &quot; -T 9&quot;);</div><div class="line">							p.waitFor();</div><div class="line">							swfFile.createNewFile();</div><div class="line">							System.out.println(&quot;第三步：转换为SWF格式	路径：&quot; + swfFile.getPath());</div><div class="line">							System.out.println(&quot;第si步：转换为SWF格式mingcheng：&quot; + swfFile.getName());</div><div class="line">//							if(pdfFile.exists()) &#123;</div><div class="line">//								pdfFile.delete();</div><div class="line">//							&#125;</div><div class="line">						&#125; catch (Exception e) &#123;</div><div class="line">							e.printStackTrace();</div><div class="line">							try &#123;</div><div class="line">								throw e;</div><div class="line">							&#125; catch (Exception e1) &#123;</div><div class="line">								// TODO Auto-generated catch block</div><div class="line">								e1.printStackTrace();</div><div class="line">							&#125;</div><div class="line">						&#125;</div><div class="line">					&#125; else &#123;</div><div class="line">						System.out.println(&quot;PDF文件不存在，无法转换&quot;);</div><div class="line">					&#125;</div><div class="line">				&#125; else &#123;</div><div class="line">					System.out.println(&quot;已经转为SWF文件，无需再次转换&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;.start();</div><div class="line">		</div><div class="line">		HttpSession session = request.getSession();</div><div class="line">		session.setAttribute(&quot;fileName&quot;, swfFile.getName());</div><div class="line">		System.out.println(&quot;我是测试:&quot;+session.getAttribute(&quot;fileName&quot;));</div><div class="line">		response.sendRedirect(request.getContextPath()+&quot;/readFile.jsp&quot;);</div><div class="line">	&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
 <h3 id="读取文件页面Readfile-Jsp代码如下："><a href="#读取文件页面Readfile-Jsp代码如下：" class="headerlink" title="读取文件页面Readfile.Jsp代码如下："></a>读取文件页面Readfile.Jsp代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div><div class="line">&lt;%</div><div class="line">String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&gt;	</div><div class="line">  &lt;head&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;在线阅读&lt;/title&gt;</div><div class="line">        &lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt; </div><div class="line">			html, body	&#123; height:100%; &#125;</div><div class="line">			body &#123; margin:0; padding:0; overflow:auto; &#125;   </div><div class="line">			#flashContent &#123; display:none; &#125;</div><div class="line">        &lt;/style&gt; </div><div class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;flexpaper/js/flexpaper_flash_debug.js&quot;&gt;&lt;/script&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;flexpaper/js/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;flexpaper/js/flexpaper_flash.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  </div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;div style=&quot;position:absolute;left:200px;top:10px;&quot;&gt;</div><div class="line">    </div><div class="line">	       &lt;center&gt; &lt;a id=&quot;viewerPlaceHolder&quot; style=&quot;width:1000px;height:800px;display:block&quot;&gt;努力加载中............&lt;/a&gt;&lt;/center&gt;</div><div class="line">	        &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	        $(document).ready(function()&#123;</div><div class="line">	        var fp = new FlexPaperViewer(	</div><div class="line">						 &apos;flexpaper/FlexPaperViewer&apos;,</div><div class="line">						 &apos;viewerPlaceHolder&apos;, &#123; config : &#123;</div><div class="line">						 SwfFile : escape(&apos;http:\/\/192.168.0.13:8080\/readonline\/swfFile\/&lt;%=request.getAttribute(&quot;fileName&quot;)%&gt;&apos;),</div><div class="line">						 Scale : 0.6, </div><div class="line">						 ZoomTransition : &apos;easeOut&apos;,</div><div class="line">						 ZoomTime : 0.5,</div><div class="line">						 ZoomInterval : 0.2,</div><div class="line">						 FitPageOnLoad : true,</div><div class="line">						 FitWidthOnLoad : false,</div><div class="line">						 PrintEnabled : true,</div><div class="line">						 FullScreenAsMaxWindow : false,</div><div class="line">						 ProgressiveLoading : true,</div><div class="line">						 MinZoomSize : 0.2,</div><div class="line">						 MaxZoomSize : 5,</div><div class="line">						 SearchMatchAll : false,</div><div class="line">						 InitViewMode : &apos;Portrait&apos;,</div><div class="line">						 </div><div class="line">						 ViewModeToolsVisible : true,</div><div class="line">						 ZoomToolsVisible : true,</div><div class="line">						 NavToolsVisible : true,</div><div class="line">						 CursorToolsVisible : true,</div><div class="line">						 SearchToolsVisible : true,</div><div class="line">  						</div><div class="line">  						 localeChain: &apos;zh_CN&apos;</div><div class="line">						 &#125;&#125;);</div><div class="line">	        &#125;);</div><div class="line">	     		</div><div class="line">	        &lt;/script&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        </div><div class="line">   &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>用官方的Paper.swf作为测试，只需要将<strong>SwfFile</strong>的地址改掉。<br>显示效果如下：<br><img src="/images/javare/01.png" alt="image"> </p>
@@ -708,7 +710,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JAVA实现类似百度文库在线浏览&quot;&gt;&lt;a href=&quot;#JAVA实现类似百度文库在线浏览&quot; class=&quot;headerlink&quot; title=&quot;JAVA实现类似百度文库在线浏览&quot;&gt;&lt;/a&gt;JAVA实现类似百度文库在线浏览&lt;/h1&gt;&lt;p&gt;前言：由于是个教育评比项目，
+      &lt;p&gt;前言：由于是个教育评比项目，需求要上传Excel，word，等 还要求在线浏览，本来刚参加工作一年，对我来说难度还是有的。查了好多资料发现网上的都千篇一律，真的头疼，而且时间也很短。但还是做出来了，写个博客，记录下&lt;br&gt;时间是 2014年6月28日23:24:23&lt;/p&gt;
     
     </summary>
     
@@ -726,9 +728,9 @@
     <link href="http://91fz.org/2012/10/11/rom/"/>
     <id>http://91fz.org/2012/10/11/rom/</id>
     <published>2012-10-10T16:00:00.000Z</published>
-    <updated>2017-07-01T15:45:21.311Z</updated>
+    <updated>2017-07-01T16:13:27.829Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="自己刷机的一些感触和经验"><a href="#自己刷机的一些感触和经验" class="headerlink" title="自己刷机的一些感触和经验"></a>自己刷机的一些感触和经验</h1><p>首先我要说一下，其实，刷机的最高境界就是不刷，连超级权限就是<strong>root</strong>都不要，这是我这段时间的一些感触。    </p>
+    <content type="html"><![CDATA[<p>首先我要说一下，其实，刷机的最高境界就是不刷，连超级权限就是<strong>root</strong>都不要，这是我这段时间的一些感触。    </p>
 <p>对于<strong>root</strong>这个问题有些人认为可以卸载系统软件，美化字体，等等好处，但是，木马也会在你不知情的情况下获得超级权限，而且可以饶过全软件，从而获取你手机里的所有信息，我想，很少有人希望他成为第二个陈冠希吧！</p>
 <h2 id="关于解锁"><a href="#关于解锁" class="headerlink" title="关于解锁"></a>关于解锁</h2><p>关于解锁，我还是希望轻易不要去解，因为你一解锁，手机厂商会不保修的，而且要再次锁手机，只有强刷官方固件，虽然简单，但许多官方固件是锁不住的！<br>如果看了上面这些你还是选择刷机，那么看下面的内容，也许对你有帮助！</p>
 <h2 id="关于ROOT"><a href="#关于ROOT" class="headerlink" title="关于ROOT"></a>关于ROOT</h2><p>首先，我说下<strong>root</strong>吧，各种手机<strong>root</strong>的方法不一样，普遍的2.3左右的系统的话（<strong>安卓一键root</strong>）和（刷机精灵）是可以解决的，但是4.0的要按自己的手机型号找软件，有点麻烦，<strong>root</strong>一般不会出现问题，失败了重新来遍就可以了。。      </p>
@@ -751,7 +753,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;自己刷机的一些感触和经验&quot;&gt;&lt;a href=&quot;#自己刷机的一些感触和经验&quot; class=&quot;headerlink&quot; title=&quot;自己刷机的一些感触和经验&quot;&gt;&lt;/a&gt;自己刷机的一些感触和经验&lt;/h1&gt;&lt;p&gt;首先我要说一下，其实，刷机的最高境界就是不刷，连超级权限就是
+      &lt;p&gt;首先我要说一下，其实，刷机的最高境界就是不刷，连超级权限就是&lt;strong&gt;root&lt;/strong&gt;都不要，这是我这段时间的一些感触。    &lt;/p&gt;
+&lt;p&gt;对于&lt;strong&gt;root&lt;/strong&gt;这个问题有些人认为可以卸载系统软件，美化字体，等等好处，但是，木马也
     
     </summary>
     
@@ -769,9 +772,9 @@
     <link href="http://91fz.org/2012/10/10/Kitchen/"/>
     <id>http://91fz.org/2012/10/10/Kitchen/</id>
     <published>2012-10-09T16:00:00.000Z</published>
-    <updated>2017-07-01T15:44:03.667Z</updated>
+    <updated>2017-07-01T16:13:37.013Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ROM修改之厨房简介及环境配置"><a href="#ROM修改之厨房简介及环境配置" class="headerlink" title="ROM修改之厨房简介及环境配置 **"></a>ROM修改之厨房简介及环境配置 **</h1><h2 id="一-厨房简介及环境配置"><a href="#一-厨房简介及环境配置" class="headerlink" title="一.厨房简介及环境配置"></a>一.厨房简介及环境配置</h2><h3 id="1-厨房简介"><a href="#1-厨房简介" class="headerlink" title="1.厨房简介"></a>1.厨房简介</h3><p>厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本</p>
+    <content type="html"><![CDATA[<h2 id="一-厨房简介及环境配置"><a href="#一-厨房简介及环境配置" class="headerlink" title="一.厨房简介及环境配置"></a>一.厨房简介及环境配置</h2><h3 id="1-厨房简介"><a href="#1-厨房简介" class="headerlink" title="1.厨房简介"></a>1.厨房简介</h3><p>厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本</p>
 <h3 id="2-厨房支持的机型（ROM）"><a href="#2-厨房支持的机型（ROM）" class="headerlink" title="2.厨房支持的机型（ROM）"></a>2.厨房支持的机型（ROM）</h3><h4 id="1）HTC设备"><a href="#1）HTC设备" class="headerlink" title="1）HTC设备"></a>1）HTC设备</h4><ul>
 <li>Buzz / Wildfire</li>
 <li>Desire</li>
@@ -900,7 +903,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;ROM修改之厨房简介及环境配置&quot;&gt;&lt;a href=&quot;#ROM修改之厨房简介及环境配置&quot; class=&quot;headerlink&quot; title=&quot;ROM修改之厨房简介及环境配置 **&quot;&gt;&lt;/a&gt;ROM修改之厨房简介及环境配置 **&lt;/h1&gt;&lt;h2 id=&quot;一-厨房简介及
+      &lt;h2 id=&quot;一-厨房简介及环境配置&quot;&gt;&lt;a href=&quot;#一-厨房简介及环境配置&quot; class=&quot;headerlink&quot; title=&quot;一.厨房简介及环境配置&quot;&gt;&lt;/a&gt;一.厨房简介及环境配置&lt;/h2&gt;&lt;h3 id=&quot;1-厨房简介&quot;&gt;&lt;a href=&quot;#1-厨房简介&quot; cla
     
     </summary>
     
@@ -918,10 +921,9 @@
     <link href="http://91fz.org/2011/11/15/imy/"/>
     <id>http://91fz.org/2011/11/15/imy/</id>
     <published>2011-11-14T16:00:00.000Z</published>
-    <updated>2017-07-01T15:43:26.483Z</updated>
+    <updated>2017-07-01T16:16:01.155Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="让国产山寨手机死机黑屏之imy"><a href="#让国产山寨手机死机黑屏之imy" class="headerlink" title="让国产山寨手机死机黑屏之imy"></a><strong>让国产山寨手机死机黑屏之imy</strong></h1><hr>
-<p>IMY铃声是一段铃声代码文件，具有占有空间小、容易编辑等特点。中国移动规定其为通用彩信文件格式之一,可以用短信进行收发（当然不花流量咯！）。IMY标准非常灵活，音域跨了9个8度，24种不同音长；还可以加入振动、屏幕背光及来电灯亮灭的效果，给人以更加美妙神奇的音乐体验。</p>
+    <content type="html"><![CDATA[<p>IMY铃声是一段铃声代码文件，具有占有空间小、容易编辑等特点。中国移动规定其为通用彩信文件格式之一,可以用短信进行收发（当然不花流量咯！）。IMY标准非常灵活，音域跨了9个8度，24种不同音长；还可以加入振动、屏幕背光及来电灯亮灭的效果，给人以更加美妙神奇的音乐体验。</p>
 <h2 id="怎样看你的手机是否支持IMY铃声？"><a href="#怎样看你的手机是否支持IMY铃声？" class="headerlink" title="　　怎样看你的手机是否支持IMY铃声？"></a>　　怎样看你的手机是否支持IMY铃声？</h2><p>　　短信编辑界面，选项——插入对象——我的铃声/预设铃声。（IMY铃声文件在短信中会以音符的图标显示。）<br>　　若能进行上述操作，则恭喜你，你的手机支持IMY;若“我的铃声”为空白，则你的手机闪存（人们习惯上将其错叫成“手机内存”）里的“audio”文件夹里没有IMY铃声。)
 　　</p>
 <h2 id="imy可传播手机病毒吗？"><a href="#imy可传播手机病毒吗？" class="headerlink" title="imy可传播手机病毒吗？"></a>imy可传播手机病毒吗？</h2><p>　　2008年11月以来，很多人收到了一些“黑屏短信”、“死机短信”、“狂振、狂闪短信”，这些短信是怎么做到的呢？又是不是病毒呢？<br>　　了解了IMY的本质，就不难回答上面的问题（请看上文加粗的文字）。这也正是“山寨机”容易中招的原因。<br>　　那些短信中包含有一些恶作剧的IMY铃声文件。以黑屏短信为例，这个IMY铃声文件不含声音代码，而只含有关闭背光、来电灯以及振动的命令（下面将会进一步详解），让人误认为是死机。笔者亲自试过，这个文件只会让手机黑屏73秒，并非真死，并且对手机无害。<br>　　IMY铃声调用的命令仅仅是声音指令、振动开启及关闭指令、屏幕背光和来电灯亮灭指令。所以并非病毒。虽不是病毒，但手机狂振、狂闪却应该是对手机有伤害的。<br>　　那么，如何删除带有这种恶作剧IMY铃声文件的短信呢？<br>　　　——调成静音模式，然后删除。原因是静音模式时，IMY铃声就不会播放，其中的恶作剧就不会得逞。呵呵~<br>　　还是强烈倡议大家“和平使用”IMY铃声。过犹不及嘛，恶作剧也应有个度。</p>
@@ -936,7 +938,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;让国产山寨手机死机黑屏之imy&quot;&gt;&lt;a href=&quot;#让国产山寨手机死机黑屏之imy&quot; class=&quot;headerlink&quot; title=&quot;让国产山寨手机死机黑屏之imy&quot;&gt;&lt;/a&gt;&lt;strong&gt;让国产山寨手机死机黑屏之imy&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+      &lt;p&gt;IMY铃声是一段铃声代码文件，具有占有空间小、容易编辑等特点。中国移动规定其为通用彩信文件格式之一,可以用短信进行收发（当然不花流量咯！）。IMY标准非常灵活，音域跨了9个8度，24种不同音长；还可以加入振动、屏幕背光及来电灯亮灭的效果，给人以更加美妙神奇的音乐体验。&lt;/p
     
     </summary>
     

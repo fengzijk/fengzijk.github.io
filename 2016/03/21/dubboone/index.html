@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="服务治理,SOA,微服务," />
+  <meta name="keywords" content="微服务,SOA,服务治理," />
 
 
 
@@ -90,23 +90,23 @@
 
 
 
-<meta name="description" content="服务治理框架之DUBBO什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监">
-<meta name="keywords" content="服务治理,SOA,微服务">
+<meta name="description" content="什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监控等内容，但遗憾的的是现">
+<meta name="keywords" content="微服务,SOA,服务治理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务治理框架之DUBBO">
 <meta property="og:url" content="http://91fz.org/2016/03/21/dubboone/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="服务治理框架之DUBBO什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监">
+<meta property="og:description" content="什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监控等内容，但遗憾的的是现">
 <meta property="og:image" content="http://91fz.org/images/dubbo/01.png">
 <meta property="og:image" content="http://91fz.org/images/dubbo/02.png">
 <meta property="og:image" content="http://91fz.org/images/dubbo/03.png">
 <meta property="og:image" content="http://91fz.org/images/dubbo/04.png">
 <meta property="og:image" content="http://91fz.org/images/dubbo/05.png">
 <meta property="og:image" content="http://91fz.org/images/dubbo/06.png">
-<meta property="og:updated_time" content="2017-07-01T15:40:36.875Z">
+<meta property="og:updated_time" content="2017-07-01T16:12:59.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务治理框架之DUBBO">
-<meta name="twitter:description" content="服务治理框架之DUBBO什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监">
+<meta name="twitter:description" content="什么是dubbo？Dubbo是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。关于注册中心、协议支持、服务监控等内容，但遗憾的的是现">
 <meta name="twitter:image" content="http://91fz.org/images/dubbo/01.png">
 
 
@@ -385,7 +385,7 @@
       
 
       
-        <h1 id="服务治理框架之DUBBO"><a href="#服务治理框架之DUBBO" class="headerlink" title="服务治理框架之DUBBO"></a>服务治理框架之DUBBO</h1><h2 id="什么是dubbo？"><a href="#什么是dubbo？" class="headerlink" title="什么是dubbo？"></a>什么是dubbo？</h2><p><strong>Dubbo</strong>是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（<strong>Provider</strong>）和服务消费方（<strong>Consumer</strong>）两个角色。关<strong>于注册中心</strong>、<strong>协议支持</strong>、<strong>服务监控</strong>等内容，但遗憾的的是现在已经停止更新了。由当当网进行维护，<strong>升级为dubbox</strong>，<strong>支持了rest</strong>。<strong>更新了spring等</strong>，<strong>而在阿里内部则又HSF框架代替</strong>。</p>
+        <h2 id="什么是dubbo？"><a href="#什么是dubbo？" class="headerlink" title="什么是dubbo？"></a>什么是dubbo？</h2><p><strong>Dubbo</strong>是阿里巴巴开源的分布式服务框架，它是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（<strong>Provider</strong>）和服务消费方（<strong>Consumer</strong>）两个角色。关<strong>于注册中心</strong>、<strong>协议支持</strong>、<strong>服务监控</strong>等内容，但遗憾的的是现在已经停止更新了。由当当网进行维护，<strong>升级为dubbox</strong>，<strong>支持了rest</strong>。<strong>更新了spring等</strong>，<strong>而在阿里内部则又HSF框架代替</strong>。</p>
 <h2 id="Dubbo的总体架构"><a href="#Dubbo的总体架构" class="headerlink" title="Dubbo的总体架构"></a>Dubbo的总体架构</h2><p><img src="/images/dubbo/01.png" alt="image"><br><strong>Dubbo框架设计一共划分了10个层</strong>，而最上面的<strong>Service</strong>层是留给实际想要使用<strong>Dubbo</strong>开发分布式服务的开发者实现业务逻辑的接口层。图中左边淡蓝背景的为服务消费方使用的接口，右边淡绿色背景的为服务提供方使用的接口，     位于中轴线上的为双方都用到的接口。<br>下面，结合<strong>Dubbo官方文档</strong>，我们分别理解一下框架分层架构中，各个层次的设计要点：</p>
 <ul>
 <li><p><strong>服务接口层（Service</strong>）：该层是与实际业务逻辑相关的，根据服务提供方和服务消费方的业务设计对应的接口和实现。   </p>
@@ -500,11 +500,11 @@
   
         <div class="post-tags">
           
-            <a href="/tags/服务治理/" rel="tag"># 服务治理</a>
+            <a href="/tags/微服务/" rel="tag"># 微服务</a>
           
             <a href="/tags/SOA/" rel="tag"># SOA</a>
           
-            <a href="/tags/微服务/" rel="tag"># 微服务</a>
+            <a href="/tags/服务治理/" rel="tag"># 服务治理</a>
           
         </div>
       
@@ -740,7 +740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务治理框架之DUBBO"><span class="nav-number">1.</span> <span class="nav-text">服务治理框架之DUBBO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是dubbo？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是dubbo？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dubbo的总体架构"><span class="nav-number">1.2.</span> <span class="nav-text">Dubbo的总体架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DUBBO的特点"><span class="nav-number">1.3.</span> <span class="nav-text">DUBBO的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务定义"><span class="nav-number">1.3.1.</span> <span class="nav-text">服务定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册"><span class="nav-number">1.3.2.</span> <span class="nav-text">服务注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务监控"><span class="nav-number">1.3.3.</span> <span class="nav-text">服务监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程通信与信息交换"><span class="nav-number">1.3.4.</span> <span class="nav-text">远程通信与信息交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务调用"><span class="nav-number">1.3.5.</span> <span class="nav-text">服务调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册-注销服务"><span class="nav-number">1.3.6.</span> <span class="nav-text">注册/注销服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务订阅-取消"><span class="nav-number">1.3.7.</span> <span class="nav-text">服务订阅/取消</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议支持"><span class="nav-number">1.3.8.</span> <span class="nav-text">协议支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DUBBO个模块与关系"><span class="nav-number">1.3.9.</span> <span class="nav-text">DUBBO个模块与关系</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是dubbo？"><span class="nav-number">1.</span> <span class="nav-text">什么是dubbo？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dubbo的总体架构"><span class="nav-number">2.</span> <span class="nav-text">Dubbo的总体架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DUBBO的特点"><span class="nav-number">3.</span> <span class="nav-text">DUBBO的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务定义"><span class="nav-number">3.1.</span> <span class="nav-text">服务定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册"><span class="nav-number">3.2.</span> <span class="nav-text">服务注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务监控"><span class="nav-number">3.3.</span> <span class="nav-text">服务监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程通信与信息交换"><span class="nav-number">3.4.</span> <span class="nav-text">远程通信与信息交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务调用"><span class="nav-number">3.5.</span> <span class="nav-text">服务调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册-注销服务"><span class="nav-number">3.6.</span> <span class="nav-text">注册/注销服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务订阅-取消"><span class="nav-number">3.7.</span> <span class="nav-text">服务订阅/取消</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议支持"><span class="nav-number">3.8.</span> <span class="nav-text">协议支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DUBBO个模块与关系"><span class="nav-number">3.9.</span> <span class="nav-text">DUBBO个模块与关系</span></a></li></ol></li></ol></div>
             
 
           </div>

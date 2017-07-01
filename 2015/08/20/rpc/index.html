@@ -90,21 +90,21 @@
 
 
 
-<meta name="description" content="关于RPC相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程">
+<meta name="description" content="相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用">
 <meta name="keywords" content="RPC,RPC原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于RPC的总结">
 <meta property="og:url" content="http://91fz.org/2015/08/20/rpc/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="关于RPC相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程">
+<meta property="og:description" content="相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用">
 <meta property="og:image" content="http://91fz.org/images/rpc/01.png">
 <meta property="og:image" content="http://91fz.org/images/rpc/02.png">
 <meta property="og:image" content="http://91fz.org/images/rpc/03.png">
 <meta property="og:image" content="http://91fz.org/images/rpc/04.png">
-<meta property="og:updated_time" content="2017-07-01T15:46:04.921Z">
+<meta property="og:updated_time" content="2017-07-01T16:13:18.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于RPC的总结">
-<meta name="twitter:description" content="关于RPC相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程">
+<meta name="twitter:description" content="相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言 什么是RPC它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用">
 <meta name="twitter:image" content="http://91fz.org/images/rpc/01.png">
 
 
@@ -383,7 +383,7 @@
       
 
       
-        <h1 id="关于RPC"><a href="#关于RPC" class="headerlink" title="关于RPC"></a>关于RPC</h1><p>相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言</p>
+        <p>相信大家的都对RPC框架很熟悉，但有人经常混淆  所以写一篇文章简单介绍下，写的不好 欢迎底下评论留言</p>
 <h2 id="什么是RPC"><a href="#什么是RPC" class="headerlink" title="什么是RPC"></a>什么是RPC</h2><p>它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。<strong>RPC</strong>协议假定某些传输协议的存在，如<strong>TCP</strong>或<strong>UDP</strong>，为通信程序之间携带信息数据。<br>RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
 <p>通俗点就是它允许程序调用另一个地址空间（通常是共享网络的另一台机器上）的过程或函数，而不用程序员显式编码这个远程调用的细节。即程序员无论是调用本地的还是远程的，本质上编写的调用代码基本相同。</p>
 <h2 id="RPC起源"><a href="#RPC起源" class="headerlink" title="RPC起源"></a>RPC起源</h2><p>RPC 这个概念术语在上世纪 80 年代由 <strong>Bruce</strong> <strong>Jay</strong> <strong>Nelson</strong> 提出。这里我们追溯下当初开发 <strong>RPC</strong> 的原动机是什么？在 <strong>Nelson</strong> 的论文 “<strong>Implementing Remote Procedure Calls</strong>“ 中他提到了几点：</p>
@@ -722,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于RPC"><span class="nav-number">1.</span> <span class="nav-text">关于RPC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RPC"><span class="nav-number">1.1.</span> <span class="nav-text">什么是RPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC起源"><span class="nav-number">1.2.</span> <span class="nav-text">RPC起源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RPC-结构"><span class="nav-number">1.2.1.</span> <span class="nav-text">RPC 结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC-组件职责"><span class="nav-number">1.3.</span> <span class="nav-text">RPC 组件职责</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC-实现分析"><span class="nav-number">1.4.</span> <span class="nav-text">RPC 实现分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入远程接口与客户端代理"><span class="nav-number">1.4.1.</span> <span class="nav-text">导入远程接口与客户端代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用编码"><span class="nav-number">1.4.2.</span> <span class="nav-text">调用编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回编码"><span class="nav-number">1.4.3.</span> <span class="nav-text">返回编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#消息体"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">消息体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输服务"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">传输服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行调用"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">执行调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效率提升"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">效率提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源隔离"><span class="nav-number">1.4.3.5.</span> <span class="nav-text">资源隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超时控制"><span class="nav-number">1.4.3.6.</span> <span class="nav-text">超时控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的-rpc-框架-double-grpc-motan-thrift-avro-性能对比"><span class="nav-number">1.5.</span> <span class="nav-text">常见的 rpc 框架 double  grpc motan  thrift  avro  性能对比</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RPC"><span class="nav-number">1.</span> <span class="nav-text">什么是RPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC起源"><span class="nav-number">2.</span> <span class="nav-text">RPC起源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RPC-结构"><span class="nav-number">2.1.</span> <span class="nav-text">RPC 结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC-组件职责"><span class="nav-number">3.</span> <span class="nav-text">RPC 组件职责</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC-实现分析"><span class="nav-number">4.</span> <span class="nav-text">RPC 实现分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入远程接口与客户端代理"><span class="nav-number">4.1.</span> <span class="nav-text">导入远程接口与客户端代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用编码"><span class="nav-number">4.2.</span> <span class="nav-text">调用编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回编码"><span class="nav-number">4.3.</span> <span class="nav-text">返回编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#消息体"><span class="nav-number">4.3.1.</span> <span class="nav-text">消息体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输服务"><span class="nav-number">4.3.2.</span> <span class="nav-text">传输服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行调用"><span class="nav-number">4.3.3.</span> <span class="nav-text">执行调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效率提升"><span class="nav-number">4.3.4.</span> <span class="nav-text">效率提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源隔离"><span class="nav-number">4.3.5.</span> <span class="nav-text">资源隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超时控制"><span class="nav-number">4.3.6.</span> <span class="nav-text">超时控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的-rpc-框架-double-grpc-motan-thrift-avro-性能对比"><span class="nav-number">5.</span> <span class="nav-text">常见的 rpc 框架 double  grpc motan  thrift  avro  性能对比</span></a></li></ol></div>
             
 
           </div>

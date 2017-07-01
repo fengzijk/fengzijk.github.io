@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="ICE 入门到精通（一）关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WE">
+<meta name="description" content="关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WEB SERVICE Dc">
 <meta name="keywords" content="ICE,微服务，服务治理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICE 入门到精通（一）">
 <meta property="og:url" content="http://91fz.org/2015/08/21/ice/index.html">
 <meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
-<meta property="og:description" content="ICE 入门到精通（一）关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WE">
+<meta property="og:description" content="关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WEB SERVICE Dc">
 <meta property="og:image" content="http://91fz.org/images/ice/ice01.png">
 <meta property="og:image" content="http://91fz.org/images/ice/ice02.png">
-<meta property="og:updated_time" content="2017-07-01T15:41:13.433Z">
+<meta property="og:updated_time" content="2017-07-01T16:13:09.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ICE 入门到精通（一）">
-<meta name="twitter:description" content="ICE 入门到精通（一）关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WE">
+<meta name="twitter:description" content="关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。 什么是ICEICE的全称是 Internet Communications Engine网络(互联网)通讯引擎它是由Zeroc公司开发的一套开源中间件系统，与DCOM,CORBA,WEB SERVICE Dc">
 <meta name="twitter:image" content="http://91fz.org/images/ice/ice01.png">
 
 
@@ -381,7 +381,7 @@
       
 
       
-        <h1 id="ICE-入门到精通（一）"><a href="#ICE-入门到精通（一）" class="headerlink" title="ICE 入门到精通（一）"></a>ICE 入门到精通（一）</h1><p>关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。</p>
+        <p>关于ICE的介绍，网上的资料有很多，但是从应用的角度上去使用的并不多，在技术革新的今天我们可能更多的是去关注应用领域而非研究领域，因此根据 我个人的使用经验，想对ICE技术做一些总结和介绍。</p>
 <h2 id="什么是ICE"><a href="#什么是ICE" class="headerlink" title="什么是ICE"></a>什么是ICE</h2><p>ICE的全称是 <strong>Internet Communications Engine网络(互联网)通讯引擎</strong><br>它是由Zeroc公司开发的一套开源中间件系统，<strong>与DCOM</strong>,<strong>CORBA</strong>,<strong>WEB SERVICE</strong> <strong>Dcom类似</strong>，<strong>支持RPC</strong>协议，但是在效率上却高于前面所述几种技术方案，是一种适用于各种环境的面向对象的中间件平台：客户和服务器可以用不同的编程语言来编写， 可以运行在不同的操作系统和系统架构上，并且可以使用多种网络技术经行通信（<strong>例如TCP</strong>、<strong>UDP</strong>、<strong>SSL等</strong>），这给我们的应用和部署带来很大的便捷性。</p>
 <h2 id="ICE的优点"><a href="#ICE的优点" class="headerlink" title="ICE的优点"></a>ICE的优点</h2><ul>
 <li><p>跨平台，支持多种语言</p>
@@ -690,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ICE-入门到精通（一）"><span class="nav-number">1.</span> <span class="nav-text">ICE 入门到精通（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是ICE"><span class="nav-number">1.1.</span> <span class="nav-text">什么是ICE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE的优点"><span class="nav-number">1.2.</span> <span class="nav-text">ICE的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与WebService的对比"><span class="nav-number">1.3.</span> <span class="nav-text">与WebService的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些基础的概念和模型"><span class="nav-number">1.4.</span> <span class="nav-text">一些基础的概念和模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE调用模式"><span class="nav-number">1.5.</span> <span class="nav-text">ICE调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE的版本控制（Facet）"><span class="nav-number">1.6.</span> <span class="nav-text">ICE的版本控制（Facet）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久化-（Feeze）"><span class="nav-number">1.7.</span> <span class="nav-text">持久化 （Feeze）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务装箱管理-（ICEBox）"><span class="nav-number">1.8.</span> <span class="nav-text">服务装箱管理 （ICEBox）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件分发（ICEPatch2）"><span class="nav-number">1.9.</span> <span class="nav-text">文件分发（ICEPatch2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布-订阅-服务（ICEStorm"><span class="nav-number">1.10.</span> <span class="nav-text">发布/订阅 服务（ICEStorm)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络拓扑负载解决方案（ICEGrid）终极武器"><span class="nav-number">1.11.</span> <span class="nav-text">网络拓扑负载解决方案（ICEGrid）终极武器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是ICE"><span class="nav-number">1.</span> <span class="nav-text">什么是ICE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE的优点"><span class="nav-number">2.</span> <span class="nav-text">ICE的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与WebService的对比"><span class="nav-number">3.</span> <span class="nav-text">与WebService的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些基础的概念和模型"><span class="nav-number">4.</span> <span class="nav-text">一些基础的概念和模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE调用模式"><span class="nav-number">5.</span> <span class="nav-text">ICE调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICE的版本控制（Facet）"><span class="nav-number">6.</span> <span class="nav-text">ICE的版本控制（Facet）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久化-（Feeze）"><span class="nav-number">7.</span> <span class="nav-text">持久化 （Feeze）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务装箱管理-（ICEBox）"><span class="nav-number">8.</span> <span class="nav-text">服务装箱管理 （ICEBox）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件分发（ICEPatch2）"><span class="nav-number">9.</span> <span class="nav-text">文件分发（ICEPatch2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布-订阅-服务（ICEStorm"><span class="nav-number">10.</span> <span class="nav-text">发布/订阅 服务（ICEStorm)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络拓扑负载解决方案（ICEGrid）终极武器"><span class="nav-number">11.</span> <span class="nav-text">网络拓扑负载解决方案（ICEGrid）终极武器</span></a></li></ol></div>
             
 
           </div>
