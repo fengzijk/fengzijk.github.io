@@ -975,6 +975,53 @@
   </entry>
   
   <entry>
+    <title>centos下yum安装卸载mysql笔记</title>
+    <link href="http://91fz.org/2013/11/09/centosmysql/"/>
+    <id>http://91fz.org/2013/11/09/centosmysql/</id>
+    <published>2013-11-08T16:00:00.000Z</published>
+    <updated>2017-07-04T11:00:36.818Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="检查老版本mysql"><a href="#检查老版本mysql" class="headerlink" title="检查老版本mysql"></a>检查老版本mysql</h2><p>查看CentOS自带mysql是否已安装。<br>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list installed  grep mysql</div></pre></td></tr></table></figure></p>
+<p><img src="imagesmysql1.png" alt="image">   </p>
+<h2 id="卸载CentOS系统自带mysql"><a href="#卸载CentOS系统自带mysql" class="headerlink" title="卸载CentOS系统自带mysql"></a>卸载CentOS系统自带mysql</h2><p>执行下面语句   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove mysql mysql-server mysql-libs compat-mysql51</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf varlibmysql</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm etcmy.cnf</div></pre></td></tr></table></figure>
+<p>查看是否还有mysql：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -qagrep mysql</div></pre></td></tr></table></figure>
+<p>如果存在，继续删除。</p>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum update</div></pre></td></tr></table></figure>
+<h2 id="查看yum库上的mysql版本信息"><a href="#查看yum库上的mysql版本信息" class="headerlink" title="查看yum库上的mysql版本信息"></a>查看yum库上的mysql版本信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y list mysql</div></pre></td></tr></table></figure>
+<p><img src="imagesmysql/2.png" alt="image">   </p>
+<h2 id="使用yum安装mysql"><a href="#使用yum安装mysql" class="headerlink" title="使用yum安装mysql"></a>使用yum安装mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install mysql-server mysql mysql-devel</div></pre></td></tr></table></figure>
+<p>查看安装mysql数据库版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -qi mysql-server</div></pre></td></tr></table></figure>
+<h2 id="开机自动启动"><a href="#开机自动启动" class="headerlink" title="开机自动启动"></a>开机自动启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig mysqld on</div></pre></td></tr></table></figure>
+<h2 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql start</div></pre></td></tr></table></figure>
+<h2 id="为root用户设置密码为root"><a href="#为root用户设置密码为root" class="headerlink" title="为root用户设置密码为root"></a>为root用户设置密码为root</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqladmin -u root password &apos;root&apos;</div></pre></td></tr></table></figure>
+<h2 id="为root用户设置远程访问"><a href="#为root用户设置远程访问" class="headerlink" title="为root用户设置远程访问"></a>为root用户设置远程访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on . to &apos;myuser&apos;@&apos;%&apos; identified by &apos;root&apos; with grant option;</div></pre></td></tr></table></figure>
+<h2 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flush privileges;</div></pre></td></tr></table></figure>
+<h2 id="添加防火墙过滤"><a href="#添加防火墙过滤" class="headerlink" title="添加防火墙过滤"></a>添加防火墙过滤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">etcrc.dinit.diptables save</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables  restart</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;检查老版本mysql&quot;&gt;&lt;a href=&quot;#检查老版本mysql&quot; class=&quot;headerlink&quot; title=&quot;检查老版本mysql&quot;&gt;&lt;/a&gt;检查老版本mysql&lt;/h2&gt;&lt;p&gt;查看CentOS自带mysql是否已安装。&lt;br&gt;输入：&lt;br&gt;&lt;figur
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://91fz.org/categories/Mysql/"/>
+    
+    
+      <category term="centos" scheme="http://91fz.org/tags/centos/"/>
+    
+      <category term="Mysql" scheme="http://91fz.org/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>自己刷机的一些感触和经验</title>
     <link href="http://91fz.org/2012/10/11/rom/"/>
     <id>http://91fz.org/2012/10/11/rom/</id>
