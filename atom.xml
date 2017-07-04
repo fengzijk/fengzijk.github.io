@@ -358,11 +358,11 @@
       <category term="JAVA" scheme="http://91fz.org/categories/JAVA/"/>
     
     
-      <category term="JAVA8" scheme="http://91fz.org/tags/JAVA8/"/>
-    
       <category term="JAVA" scheme="http://91fz.org/tags/JAVA/"/>
     
       <category term="JAVA新特性" scheme="http://91fz.org/tags/JAVA%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+      <category term="JAVA8" scheme="http://91fz.org/tags/JAVA8/"/>
     
   </entry>
   
@@ -828,7 +828,7 @@
     <link href="http://91fz.org/2013/12/18/centosjdk/"/>
     <id>http://91fz.org/2013/12/18/centosjdk/</id>
     <published>2013-12-17T16:00:00.000Z</published>
-    <updated>2017-07-04T04:05:01.947Z</updated>
+    <updated>2017-07-04T04:10:13.975Z</updated>
     
     <content type="html"><![CDATA[<p>首先，在你的服务器上运行一下更新。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum update</div></pre></td></tr></table></figure>
@@ -886,7 +886,7 @@
     
       <category term="JDK" scheme="http://91fz.org/tags/JDK/"/>
     
-      <category term="JAVA8" scheme="http://91fz.org/tags/JAVA8/"/>
+      <category term="JAVA" scheme="http://91fz.org/tags/JAVA/"/>
     
   </entry>
   
