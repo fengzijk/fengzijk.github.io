@@ -147,11 +147,11 @@
       <category term="微服务 SOA  服务治理" scheme="http://91fz.org/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
     
-      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
       <category term="SOA" scheme="http://91fz.org/tags/SOA/"/>
     
-      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
+      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -481,11 +481,11 @@
       <category term="微服务 SOA  服务治理" scheme="http://91fz.org/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1-SOA-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
     
-      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
     
       <category term="SOA" scheme="http://91fz.org/tags/SOA/"/>
     
-      <category term="服务治理" scheme="http://91fz.org/tags/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86/"/>
+      <category term="微服务" scheme="http://91fz.org/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -979,7 +979,7 @@
     <link href="http://91fz.org/2013/11/09/centosmysql/"/>
     <id>http://91fz.org/2013/11/09/centosmysql/</id>
     <published>2013-11-08T16:00:00.000Z</published>
-    <updated>2017-07-04T11:00:36.818Z</updated>
+    <updated>2017-07-04T11:12:07.685Z</updated>
     
     <content type="html"><![CDATA[<h2 id="检查老版本mysql"><a href="#检查老版本mysql" class="headerlink" title="检查老版本mysql"></a>检查老版本mysql</h2><p>查看CentOS自带mysql是否已安装。<br>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list installed  grep mysql</div></pre></td></tr></table></figure></p>
 <p><img src="imagesmysql1.png" alt="image">   </p>
@@ -1000,7 +1000,7 @@
 <h2 id="开机自动启动"><a href="#开机自动启动" class="headerlink" title="开机自动启动"></a>开机自动启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig mysqld on</div></pre></td></tr></table></figure>
 <h2 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql start</div></pre></td></tr></table></figure>
 <h2 id="为root用户设置密码为root"><a href="#为root用户设置密码为root" class="headerlink" title="为root用户设置密码为root"></a>为root用户设置密码为root</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqladmin -u root password &apos;root&apos;</div></pre></td></tr></table></figure>
-<h2 id="为root用户设置远程访问"><a href="#为root用户设置远程访问" class="headerlink" title="为root用户设置远程访问"></a>为root用户设置远程访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on . to &apos;myuser&apos;@&apos;%&apos; identified by &apos;root&apos; with grant option;</div></pre></td></tr></table></figure>
+<h2 id="为root用户设置远程访问"><a href="#为root用户设置远程访问" class="headerlink" title="为root用户设置远程访问"></a>为root用户设置远程访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on . to &apos;root&apos;@&apos;%&apos; identified by &apos;root&apos; with grant option;</div></pre></td></tr></table></figure>
 <h2 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flush privileges;</div></pre></td></tr></table></figure>
 <h2 id="添加防火墙过滤"><a href="#添加防火墙过滤" class="headerlink" title="添加防火墙过滤"></a>添加防火墙过滤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">etcrc.dinit.diptables save</div></pre></td></tr></table></figure>

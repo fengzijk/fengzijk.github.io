@@ -99,7 +99,7 @@
 <meta property="og:description" content="检查老版本mysql查看CentOS自带mysql是否已安装。输入：1yum list installed  grep mysql     卸载CentOS系统自带mysql执行下面语句    1yum remove mysql mysql-server mysql-libs compat-mysql51 1rm -rf varlibmysql 1rm etcmy.cnf 查看是否还有mysql：">
 <meta property="og:image" content="http://91fz.org/2013/11/09/centosmysql/imagesmysql1.png">
 <meta property="og:image" content="http://91fz.org/2013/11/09/centosmysql/imagesmysql/2.png">
-<meta property="og:updated_time" content="2017-07-04T11:00:36.818Z">
+<meta property="og:updated_time" content="2017-07-04T11:12:07.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos下yum安装卸载mysql笔记">
 <meta name="twitter:description" content="检查老版本mysql查看CentOS自带mysql是否已安装。输入：1yum list installed  grep mysql     卸载CentOS系统自带mysql执行下面语句    1yum remove mysql mysql-server mysql-libs compat-mysql51 1rm -rf varlibmysql 1rm etcmy.cnf 查看是否还有mysql：">
@@ -400,7 +400,7 @@
 <h2 id="开机自动启动"><a href="#开机自动启动" class="headerlink" title="开机自动启动"></a>开机自动启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig mysqld on</div></pre></td></tr></table></figure>
 <h2 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql start</div></pre></td></tr></table></figure>
 <h2 id="为root用户设置密码为root"><a href="#为root用户设置密码为root" class="headerlink" title="为root用户设置密码为root"></a>为root用户设置密码为root</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqladmin -u root password &apos;root&apos;</div></pre></td></tr></table></figure>
-<h2 id="为root用户设置远程访问"><a href="#为root用户设置远程访问" class="headerlink" title="为root用户设置远程访问"></a>为root用户设置远程访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on . to &apos;myuser&apos;@&apos;%&apos; identified by &apos;root&apos; with grant option;</div></pre></td></tr></table></figure>
+<h2 id="为root用户设置远程访问"><a href="#为root用户设置远程访问" class="headerlink" title="为root用户设置远程访问"></a>为root用户设置远程访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on . to &apos;root&apos;@&apos;%&apos; identified by &apos;root&apos; with grant option;</div></pre></td></tr></table></figure>
 <h2 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flush privileges;</div></pre></td></tr></table></figure>
 <h2 id="添加防火墙过滤"><a href="#添加防火墙过滤" class="headerlink" title="添加防火墙过滤"></a>添加防火墙过滤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">etcrc.dinit.diptables save</div></pre></td></tr></table></figure>
