@@ -267,73 +267,6 @@
   </entry>
   
   <entry>
-    <title>Centos 安装JDK</title>
-    <link href="http://91fz.org/2016/05/18/centosjdk/"/>
-    <id>http://91fz.org/2016/05/18/centosjdk/</id>
-    <published>2016-05-17T16:00:00.000Z</published>
-    <updated>2017-07-04T04:02:54.821Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先，在你的服务器上运行一下更新。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum update</div></pre></td></tr></table></figure>
-<p>然后，在您的系统上搜索，任何版本的已安装的JDK组件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -qa | grep -E &apos;^open[jre|jdk]|j[re|dk]&apos;</div></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gobject-introspection-1.36.0-4.el7.x86_64</div><div class="line">pygobject3-base-3.8.2-4.el7.x86_64</div></pre></td></tr></table></figure>
-<p>输入以下命令，查看已安装的JAVA版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
-<p>如果你之前已经安装了JAVA1.6或1.7的版本，请执行下列命令，将他们卸载。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum remove java-1.6.0-openjdk</div><div class="line">yum remove java-1.7.0-openjdk</div></pre></td></tr></table></figure>
-<p>在我写这个教程的时候最新版本的JDK是JDK 8u131。首先我们来下载最新版本的 Java版本</p>
-<p>到Oracle Java download page下载和计算机架构相匹配的版本。</p>
-<p>因为我用的是 64bit CentOS 6.5 server，说以我下载的是64位的rpm包。</p>
-<p>然后，到你的下载目录，运行以下的命令来安装它。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh rpm -ivh jdk-7u25-linux-x64.rpm</div></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@localhost gzf]# rpm -ivh jdk-7u25-linux-x64.rpm </div><div class="line">Preparing...                ########################################### [100%]</div><div class="line">   1:jdk1.7.0_25          ########################################### [100%]</div><div class="line">Unpacking JAR files...</div><div class="line">	tools.jar...</div><div class="line">	plugin.jar...</div><div class="line">	javaws.jar...</div><div class="line">	deploy.jar...</div><div class="line">	rt.jar...</div><div class="line">	jsse.jar...</div><div class="line">	charsets.jar...</div><div class="line">	localedata.jar...</div></pre></td></tr></table></figure>
-<p>现在，用一下的命令来查看你安装的JDK的版本号。</p>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost gzf]# java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.7.0_25-b11)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.25-b11, mixed mode)</div></pre></td></tr></table></figure>
-<p>正如上面所显示的那样，最新版本的JDK已经被安装好了<br>设置全局环境变量</p>
-<p>我们可以用如下命令来轻松设置你安装JDK的环境变量:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/1.7.0_25/</div><div class="line">export PATH=$PATH:$JAVA_HOME</div></pre></td></tr></table></figure>
-<p>现在，让我们用下面的命令来查看JDK的环境变量:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $JAVA_HOME</div></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/java/1.8.0_25/</div></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $PATH</div></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/java/1.7.0_25/</div></pre></td></tr></table></figure>
-<p>然而，接下来的安装方法我们并不推荐。因为，安装路径会在机器重启以后会消失。为了使它保存下来，你需要把安装路径添加到系统的配置文件里。</p>
-<p>做它之前，我们要在 <strong>/etc/profile.d/</strong> 下创建一个叫做 <strong>java.sh</strong>的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
-<p>把下面的命令添加到文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">JAVA_HOME=/usr/java/1.7.0_25</div><div class="line">PATH=$JAVA_HOME/bin:$PATH</div><div class="line">export PATH JAVA_HOME</div><div class="line">export CLASSPATH=.</div></pre></td></tr></table></figure>
-<p>保存并关闭文件。为了使它有执行的权限运行以下的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
-<p>接下来，使刚才改变的环境变量永久有效运行以下下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先，在你的服务器上运行一下更新。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
-    
-    </summary>
-    
-      <category term="JAVA" scheme="http://91fz.org/categories/JAVA/"/>
-    
-    
-      <category term="centos" scheme="http://91fz.org/tags/centos/"/>
-    
-      <category term="JDK" scheme="http://91fz.org/tags/JDK/"/>
-    
-      <category term="JAVA8" scheme="http://91fz.org/tags/JAVA8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JAVA8新特性（自己总结）</title>
     <link href="http://91fz.org/2016/05/18/java8/"/>
     <id>http://91fz.org/2016/05/18/java8/</id>
@@ -887,6 +820,73 @@
       <category term="JAVA" scheme="http://91fz.org/tags/JAVA/"/>
     
       <category term="仿百度文库" scheme="http://91fz.org/tags/%E4%BB%BF%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos 安装JDK</title>
+    <link href="http://91fz.org/2013/12/18/centosjdk/"/>
+    <id>http://91fz.org/2013/12/18/centosjdk/</id>
+    <published>2013-12-17T16:00:00.000Z</published>
+    <updated>2017-07-04T04:05:01.947Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先，在你的服务器上运行一下更新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum update</div></pre></td></tr></table></figure>
+<p>然后，在您的系统上搜索，任何版本的已安装的JDK组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -qa | grep -E &apos;^open[jre|jdk]|j[re|dk]&apos;</div></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gobject-introspection-1.36.0-4.el7.x86_64</div><div class="line">pygobject3-base-3.8.2-4.el7.x86_64</div></pre></td></tr></table></figure>
+<p>输入以下命令，查看已安装的JAVA版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
+<p>如果你之前已经安装了JAVA1.6或1.7的版本，请执行下列命令，将他们卸载。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum remove java-1.6.0-openjdk</div><div class="line">yum remove java-1.7.0-openjdk</div></pre></td></tr></table></figure>
+<p>在我写这个教程的时候最新版本的JDK是JDK 8u131。首先我们来下载最新版本的 Java版本</p>
+<p>到Oracle Java download page下载和计算机架构相匹配的版本。</p>
+<p>因为我用的是 64bit CentOS 6.5 server，说以我下载的是64位的rpm包。</p>
+<p>然后，到你的下载目录，运行以下的命令来安装它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh rpm -ivh jdk-7u25-linux-x64.rpm</div></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@localhost gzf]# rpm -ivh jdk-7u25-linux-x64.rpm </div><div class="line">Preparing...                ########################################### [100%]</div><div class="line">   1:jdk1.7.0_25          ########################################### [100%]</div><div class="line">Unpacking JAR files...</div><div class="line">	tools.jar...</div><div class="line">	plugin.jar...</div><div class="line">	javaws.jar...</div><div class="line">	deploy.jar...</div><div class="line">	rt.jar...</div><div class="line">	jsse.jar...</div><div class="line">	charsets.jar...</div><div class="line">	localedata.jar...</div></pre></td></tr></table></figure>
+<p>现在，用一下的命令来查看你安装的JDK的版本号。</p>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost gzf]# java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.7.0_25-b11)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.25-b11, mixed mode)</div></pre></td></tr></table></figure>
+<p>正如上面所显示的那样，最新版本的JDK已经被安装好了<br>设置全局环境变量</p>
+<p>我们可以用如下命令来轻松设置你安装JDK的环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/1.7.0_25/</div><div class="line">export PATH=$PATH:$JAVA_HOME</div></pre></td></tr></table></figure>
+<p>现在，让我们用下面的命令来查看JDK的环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $JAVA_HOME</div></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/java/1.8.0_25/</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $PATH</div></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/java/1.7.0_25/</div></pre></td></tr></table></figure>
+<p>然而，接下来的安装方法我们并不推荐。因为，安装路径会在机器重启以后会消失。为了使它保存下来，你需要把安装路径添加到系统的配置文件里。</p>
+<p>做它之前，我们要在 <strong>/etc/profile.d/</strong> 下创建一个叫做 <strong>java.sh</strong>的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
+<p>把下面的命令添加到文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">JAVA_HOME=/usr/java/1.7.0_25</div><div class="line">PATH=$JAVA_HOME/bin:$PATH</div><div class="line">export PATH JAVA_HOME</div><div class="line">export CLASSPATH=.</div></pre></td></tr></table></figure>
+<p>保存并关闭文件。为了使它有执行的权限运行以下的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
+<p>接下来，使刚才改变的环境变量永久有效运行以下下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile.d/java.sh</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先，在你的服务器上运行一下更新。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://91fz.org/categories/JAVA/"/>
+    
+    
+      <category term="centos" scheme="http://91fz.org/tags/centos/"/>
+    
+      <category term="JDK" scheme="http://91fz.org/tags/JDK/"/>
+    
+      <category term="JAVA8" scheme="http://91fz.org/tags/JAVA8/"/>
     
   </entry>
   
