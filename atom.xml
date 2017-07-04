@@ -775,6 +775,90 @@
   </entry>
   
   <entry>
+    <title>centos redis 源码安装配置</title>
+    <link href="http://91fz.org/2014/12/18/centosredis/"/>
+    <id>http://91fz.org/2014/12/18/centosredis/</id>
+    <published>2014-12-17T16:00:00.000Z</published>
+    <updated>2017-07-04T10:18:18.982Z</updated>
+    
+    <content type="html"><![CDATA[<p>centos redis 源码安装配置</p>
+<p>载redis源码，并进行相关操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</div><div class="line"></div><div class="line">tar -zxvf redis-3.2.3.tar.gz</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv redis-3.2.3 redis</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/0.png" alt="image"> </p>
+<p>解压完毕后，现在开始安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd redis</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/1.png" alt="image"></p>
+<p>如果出现上图 则是没有安装编译环境 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install gcc</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/2.png" alt="image"></p>
+<p>出现上图 就安装好编译环境了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<p>继续执行  发现又出错误了   </p>
+<p><img src="/images/redis/3.png" alt="image">   </p>
+<p>解决办法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make MALLOC=libc</div><div class="line">make install</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/4.png" alt="image">   </p>
+<p>到此安装成功！！！   </p>
+<p>可查看，/usr/local/bin下已有这些文件。<br>注意：若此时执行redis-server –v (查看版本命令)，若提示redis-server command not found，则需要将/usr/local/bin目录加到环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profil</div></pre></td></tr></table></figure>
+<p>把PATH=/usr/local/bin:$PATH<br>export PATH<br>添加到里面<br>要是刚才的修改马上生效，需要执行以下代码   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+<p>时再查看系统环境变量，就能看见刚才加的东西已经生效了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost utils]# echo $PATH</div><div class="line">/usr/local/bin:/usr/java/jdk1.8.0_131/bin:/usr/java/jdk1.8.0_131/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/root/bin:/usr/local/bin</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>通过上图，我们可以很容易的看出，redis安装到/usr/local,/usr/local/bin,/usr/local/share,/usr/local/include,/usr/local/lib,/usr/local/share/man目录下。</p>
+<p>然后再切换到utils目录下，执行redis初始化脚本install_server.sh，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd utils/</div><div class="line"></div><div class="line">./install_server.sh</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/5.png" alt="image"><br>通过上图，我们可以看出redis初始化后redis配置文件为/etc/redis/6379.conf，日志文件为/var/log/redis_6379.log，数据文件dump.rdb存放到/var/lib/redis/6379目录下，启动脚本为/etc/init.d/redis_6379。</p>
+<h2 id="修改配置文件，配置参数"><a href="#修改配置文件，配置参数" class="headerlink" title="修改配置文件，配置参数"></a>修改配置文件，配置参数</h2><p>打开、etc/redis 编辑6379.conf（重命名为redis.conf）我没有其他需求 所以目录不修改</p>
+<h2 id="持久化打开"><a href="#持久化打开" class="headerlink" title="持久化打开"></a>持久化打开</h2><p>默认rdb，可选择是否开启aof，若开启，修改配置文件appendonly</p>
+<h2 id="开启后台运行"><a href="#开启后台运行" class="headerlink" title="开启后台运行"></a>开启后台运行</h2><p>修改daemonize属性改成 yes<br><img src="/images/redis/7.png" alt="image">   </p>
+<p>配置成功！！！   </p>
+<h2 id="redis添加成服务"><a href="#redis添加成服务" class="headerlink" title="redis添加成服务"></a>redis添加成服务</h2><p>创建redis启动脚本<br>拷贝解压包下utils下redis启动脚本至/etc/init.d/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp  /usr/local/gzf/redis/redis/utils/redis_init_script /etc/init.d/</div></pre></td></tr></table></figure>
+<p>修改脚本配置（如果之前改过etc/redis下配置文件名字的话）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/rc.d/init.d/redis_init_script</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CONF=&quot;/etc/redis/redis.conf&quot;</div></pre></td></tr></table></figure>
+<p>保存<br>退出<br>至此，在/etc/init.d/目录下，已经可以通过service redis start/stop 命令启动和关闭redis</p>
+<p>若在其他目录下，不能够使用这2个命令，请继续配置   </p>
+<p><strong>给启动脚本添加权限</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/init.d/redis</div></pre></td></tr></table></figure>
+<h2 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig redis on</div></pre></td></tr></table></figure>
+<p>如果运行报错，提示<br><img src="/images/redis/8.png" alt="image">    </p>
+<p>是因为没有在启动脚本里加入redis启动优先级信息，可添加如下</p>
+<p><img src="/images/redis/9.png" alt="image">    </p>
+<p>然后 运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig redis on</div></pre></td></tr></table></figure>
+<p><img src="/images/redis/10.png" alt="image"> </p>
+<p>如果另一台机器链接不上 如下：<br><img src="/images/redis/11.png" alt="image"><br>（有可能是防火墙跟配置问题）<br>打开 /etc/redis/redis.conf  注释掉 bind 127.0.0.1   </p>
+<p>在redis3.2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind 127.0.0.1，再访问redisd时候还是报错   </p>
+<p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">protected-mode no</div></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi  /etc/sysconfig/iptables</div></pre></td></tr></table></figure>
+<p>在 icmp-host-prohibited  上面加入 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 6379 -j ACCEPT</div></pre></td></tr></table></figure>
+<p>然后 重启防火墙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">services iptables  restart</div></pre></td></tr></table></figure></p>
+<p><strong>完工！！！！写的不好，欢迎大家提意见。。。</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;centos redis 源码安装配置&lt;/p&gt;
+&lt;p&gt;载redis源码，并进行相关操作:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/
+    
+    </summary>
+    
+      <category term="Redis" scheme="http://91fz.org/categories/Redis/"/>
+    
+    
+      <category term="centos" scheme="http://91fz.org/tags/centos/"/>
+    
+      <category term="Redis" scheme="http://91fz.org/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JAVA实现类似百度文库在线浏览</title>
     <link href="http://91fz.org/2014/06/28/javare/"/>
     <id>http://91fz.org/2014/06/28/javare/</id>
