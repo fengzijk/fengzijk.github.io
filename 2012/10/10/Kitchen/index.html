@@ -1,0 +1,946 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ROM修改,美化ROM," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="程序员疯子的博客-Code is Art, Code is Poetry!" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一.厨房简介及环境配置1.厨房简介厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本 2.厨房支持的机型（ROM）1）HTC设备 Buzz / Wildfire Desire D">
+<meta name="keywords" content="ROM修改,美化ROM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROM修改之厨房简介及环境配置">
+<meta property="og:url" content="http://91fz.org/2012/10/10/Kitchen/index.html">
+<meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+<meta property="og:description" content="一.厨房简介及环境配置1.厨房简介厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本 2.厨房支持的机型（ROM）1）HTC设备 Buzz / Wildfire Desire D">
+<meta property="og:updated_time" content="2017-07-01T16:13:37.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ROM修改之厨房简介及环境配置">
+<meta name="twitter:description" content="一.厨房简介及环境配置1.厨房简介厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本 2.厨房支持的机型（ROM）1）HTC设备 Buzz / Wildfire Desire D">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://91fz.org/2012/10/10/Kitchen/"/>
+
+
+
+
+
+  <title> ROM修改之厨房简介及环境配置 | 程序员疯子的博客-Code is Art, Code is Poetry! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">程序员疯子的博客-Code is Art, Code is Poetry!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://91fz.org/2012/10/10/Kitchen/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fengzijk">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="程序员疯子的博客-Code is Art, Code is Poetry!" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                ROM修改之厨房简介及环境配置
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-10-10T00:00:00+08:00">
+                2012-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/以前/" itemprop="url" rel="index">
+                    <span itemprop="name">以前</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2012/10/10/Kitchen/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		
+		
+        
+		
+          
+
+          
+
+          
+ 
+        
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一-厨房简介及环境配置"><a href="#一-厨房简介及环境配置" class="headerlink" title="一.厨房简介及环境配置"></a>一.厨房简介及环境配置</h2><h3 id="1-厨房简介"><a href="#1-厨房简介" class="headerlink" title="1.厨房简介"></a>1.厨房简介</h3><p>厨房，是HTC android厨房的简称，是一款由国外ROM达人写的与DOS程序相似的ROM修改程序，目前各版本介绍及更新主要发布于国外著名玩机论坛XDA- Developers, 目前发布有linux版本和windows版本,在这里,花小祺只为大家介绍windows版本</p>
+<h3 id="2-厨房支持的机型（ROM）"><a href="#2-厨房支持的机型（ROM）" class="headerlink" title="2.厨房支持的机型（ROM）"></a>2.厨房支持的机型（ROM）</h3><h4 id="1）HTC设备"><a href="#1）HTC设备" class="headerlink" title="1）HTC设备"></a>1）HTC设备</h4><ul>
+<li>Buzz / Wildfire</li>
+<li>Desire</li>
+<li>Desire HD / Inspire 4G</li>
+<li>Desire S</li>
+<li>Desire Z</li>
+<li>Dream / G1</li>
+<li>Droid Eris</li>
+<li>Evo 4G</li>
+<li>Evo Shift 4G</li>
+<li>HD2 </li>
+<li>Hero / G2 Touch</li>
+<li>Incredible</li>
+<li>Incredible S</li>
+<li>Legend</li>
+<li>Magic / myTouch 3G</li>
+<li>myTouch 3G Slide</li>
+<li>myTouch 4G / Glacier</li>
+<li>Nexus One</li>
+<li>Tattoo / Click</li>
+<li>Thunderbolt<br>理论支持一些其他机型的已Root的HTC手机（android操作系统）也有可能支持一些WindowsMobile等可以使用Android NAND ROM的机型</li>
+</ul>
+<h3 id="2）非HTC设备："><a href="#2）非HTC设备：" class="headerlink" title="2）非HTC设备："></a>2）非HTC设备：</h3><ul>
+<li>戴尔 Streak 7</li>
+<li>华为 U8100/U8110/U8120/U8150</li>
+<li>LG Ally</li>
+<li>LG GT540 Optimus</li>
+<li>LG P500 </li>
+<li>LG Shine Plus</li>
+<li>LG Vortex</li>
+<li>摩托罗拉 CLIQ / CLIQ XT</li>
+<li>三星 Galaxy S - You must use RMGeren’s SGS version of this kitchen</li>
+<li>三星 Nexus S<br>•索爱 Xperia X10 / X10 Mini / X10 Mini Pro - 不含 boot.img </li>
+<li>T-Mobile Pulse</li>
+</ul>
+<h3 id="3）理论支持设备（还没正式确定）"><a href="#3）理论支持设备（还没正式确定）" class="headerlink" title="3）理论支持设备（还没正式确定）"></a>3）理论支持设备（还没正式确定）</h3><ul>
+<li>摩托罗拉Droid</li>
+<li>摩托罗拉Milestone（修改前需移除boot.img文件）</li>
+</ul>
+<p>由于我的电脑室win7系统 所以就以win7为例<br><strong>安装方法：</strong><br>首先学java语言的同学肯定自己电脑上已经配置好java环境了可以直接省略安装JDK这一步：</p>
+<ul>
+<li>下载后直接全默认安装JDK </li>
+<li>最好默认C盘，如果在别的盘，下面的路径自行对应修改</li>
+<li>设置环境变量：JAVA_HOME、PATH、CLASSPATH<br><strong>JAVA_HOME</strong>：<br><strong>我的电脑</strong>-&gt;<strong>属性</strong>-&gt;<strong>高级</strong>-&gt;单击“<strong>环境变量</strong>”按钮-&gt;单击“<strong>系统变量</strong>”区域的“<strong>新建</strong>”按钮-&gt;在“<strong>变量名</strong>”文本框中输入<strong>JAVA_HOME</strong>，在“<strong>变量值</strong>”文本框中输入<strong>JDK</strong>的安装路径（列如<strong>C:\Program Files\Java\jdk1.6.0_22</strong>）,单击<strong>确定</strong>   </li>
+</ul>
+<p><strong>PATH</strong>：在系统变量中查看<strong>PATH</strong>变量，如果存在<strong>PATH</strong>，则在最末尾多添加一个<strong>%JAVA_HOME%\bin</strong>;（<strong>直接添加，无需加空格之类的</strong>）。如果不存在，<strong>则新建变量PATH</strong>，设定变量值为：<strong>%JAVA_HOME%\bin</strong>;<br><strong>CLASSPATH</strong>：在系统变量中查看<strong>CLASSPATH</strong>变量，如果存在<strong>CLASSPATH</strong>，则在最末尾添加%JAVA_HOME%lib\dt.jar;%JAVA_HOME%\lib\tools.jar。如果不存在，则新建一个，设定变量值为：<strong>%JAVA_HOME%lib\dt.jar;%JAVA_HOME%\lib\tools.jar</strong>;<br><strong>完成以上步骤后，开始验证是否安装成功。</strong><br><strong>运行CMD（开始，运行，输入cmd，回车），输入：javac。假如出现了一堆如何使用java的帮助，那就是已经安装成功了。</strong>  </p>
+<p><strong>第二步。安装cygwin</strong>    </p>
+<ul>
+<li>解压下载到的压缩包（比如解压到C盘，解压出来的东西包括：<strong>cygwin_packages</strong>文件夹、s<strong>etup.exe</strong>、安装说明.txt），记得路径中不要带中<br>文，最好也不要带空格。</li>
+<li>运行 <strong>Setup.exe</strong> 安装程序</li>
+<li>选择 “<strong>Install from Local Directory</strong>“，然后点击 <strong>Next</strong> （下一步）。</li>
+<li>接下来，指定根目录。也就是你想要安装 <strong>Cygwin</strong> 的位置(但不能是本压缩包解压出来的 <strong>cygwin_packages</strong> 文件夹)。如果你喜欢，可以是<strong>C:\Cygwin</strong>，注意要确定文件夹名种没有空格。然后点击 <strong>Next</strong> （下一步）</li>
+<li>然后，指定 <strong>Local Package Directory</strong>，必须指定为 <strong>cygwin_packages</strong> 文件夹所在路径（且<strong>cygwin_packages</strong>下级目录必须是<strong>英文</strong>（这一步有这样一个注意点，路径一定要指到<strong>cygwin_packages</strong> ）<br>。假如跳出了一个警告对话框，<strong>点击yes</strong>（是）。</li>
+<li><p>当安装程序显示出所有的包名时，点击上方第一个的 “<strong>All &lt;-&gt; Default</strong>“ 为 “<strong>All &lt;-&gt; Install</strong>“ (点击那个环形箭头符号)（这一步有比较长的进度<br>条）   </p>
+</li>
+<li><p>然后点击 <strong>Next</strong> （下一步），安装程序就会为你安装好 <strong>Kitchen</strong> 需要 <strong>Cygwin</strong> 提供的一切支持</p>
+</li>
+<li>最后，点击桌面上的 <strong>Cygwin</strong> 快捷方式以便为你创建 <strong>home</strong> 文件夹。（如果此步一闪而过注意检查上面的步骤）</li>
+<li><strong>最后，开始使用厨房：</strong></li>
+<li>完成上面的步骤后，将下载到厨房解压到<strong>C:\Cygwin\home\Administrator</strong>（如果是你设置了自己的登录名，那么<strong>Administrator</strong>就变成你自己的用户名就行了，同理如果你不是在C盘，做相应变化）<br>也就是说，解压完厨房，<strong>C:\Cygwin\home\Administrator</strong>目录下必有：<strong>original_update</strong>，<strong>scripts</strong>，<strong>tools</strong>，<strong>menu</strong>这几个厨房文件</li>
+<li><p>点击桌面上的 <strong>Cygwin</strong> 快捷方式</p>
+</li>
+<li><p>执行命令：<strong>./menu</strong><br><strong>正式开始使用厨房定制ROM</strong><br>厨房很强大，可以支持很多<strong>ROM</strong>，不管是官方的还是民间的，这里我能力有限只能稍微介绍怎么提取并修改官方<strong>ROM</strong>，其他<strong>ROM</strong>大家可以自己摸索。</p>
+</li>
+</ul>
+<p>1，把拷贝出来的<strong>rom.zip</strong>复制到U盘中，<br>通过U盘把提取的ZIP复制到虚拟机中。<br>2，打开zip文件，或者解压zip文件，把里面的boot.img和system.img拷贝到桌面的<br>“到original update的链接”文件夹中。<br>3，运行桌面的“到menu的链接”，点击在终端中运行。(这一步好像有时候不行，按菜单功能不能进入，如果不行的话，大家只能打开主文件夹，双击menu打开。或者在附件-终端中输入“./menu”打开厨房了)<br>4，根据屏幕提示：选择1，按回车，再按回车，在按1选择刚才拷入的boot.img和system.img，按回车后就开始分解img文件了。分解后提示查看ROM的一些信息，根据需要Y或者N，回车。<br>5，根据菜单上的功能按相应的数字键进入。并根据提示完成定制。配置完，在主菜单选择99按回车可以打包定制目录，自动生成ROM。文件夹在主目录的output文件夹中（菜单栏-位置-主文件夹）。按上面的方法创建output文件夹的快速链接，并放到桌面去。方便以后打开。<br>6，把zip拷贝到U盘。再拷贝到手机内存卡。然后接下来大家都懂得。或者直接把手机通过可移动磁盘接入到虚拟机中也可以。操作和U盘一样。<br>厨房菜单功能简单介绍：</p>
+<h2 id="Main-Menu（主菜单）"><a href="#Main-Menu（主菜单）" class="headerlink" title="Main Menu（主菜单）"></a>Main Menu（主菜单）</h2><ul>
+<li><ol>
+<li>Set up working folder from ROM（从ROM文件导入到工作文件夹）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add root permissions（加入ROOT权限）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add BusyBox（加入BusyBox）</li>
+</ol>
+</li>
+<li><ol>
+<li>Disable boot screen sounds（禁止启动音乐）</li>
+</ol>
+</li>
+<li><ol>
+<li>Add wireless tethering（加入WIFI共享）</li>
+</ol>
+</li>
+<li><ol>
+<li>Zipalign all *.apk files to optimize RAM usage（对所有apk进行Zipalign，进行程序内存优化）</li>
+</ol>
+</li>
+<li><ol>
+<li>Change wipe status of ROM（刷机时清除机器数据和缓存，但不包括SD-ext分区）</li>
+</ol>
+</li>
+<li><ol>
+<li>Change name of ROM（更改ROM的名称）</li>
+</ol>
+</li>
+<li><ol>
+<li>Check update-script for errors（检查update-script升级脚本是否有错误）</li>
+</ol>
+</li>
+<li><ol>
+<li>Show working folder information（显示工作目录下rom的信息）<br>Advanced Options（增强定制选项）</li>
+</ol>
+</li>
+<li>11 - Deodex files in your ROM （Deodex ROM中的文件，就是把system/app下的APK和ODEX合并为一个apk文件，以便进行更新系统软件）</li>
+<li>12 - Add task killer tweak for speed (stock ROM only)（加入Android内存优化用以加快速度，只适用于官方ROM）</li>
+<li>13 - Add /data/app functionality（加入自定义可卸载程序存放目录，放在这里面的程序刷机后可以卸载，刷完格式化手机也会丢失）</li>
+<li>14 - Add Nano text editor + sysro/sysrw（加入Nano文本编辑器，System目录的只读和读写转换）</li>
+<li>15 - Add Bash (command shell)（加入Shell命令集）</li>
+<li>16 - Add Apps2SD（加入Apps2SD功能，就是A2SD+之类的）</li>
+<li>17 - Add /etc/init.d scripts support (busybox run-parts)（加入对/etc/init.d目录下脚本运行的支持）</li>
+<li>18 - Add custom boot animation functionality（加入自定义开机动画的支持）</li>
+<li>19 - Porting tools (experimental)（移植工具，仅测试）</li>
+<li>20 - Unpack or re-pack a boot.img（打包或解包boot.img）</li>
+<li>21 - Unpack data.img （分解data.img）</li>
+<li>22 - Sign APK file(s)（签名apk安装包）</li>
+<li>23 - Convert update-script or updater-script（转换update-script 或者updater-script）</li>
+<li>24 - Run plugin scripts（运行插件脚本之类的）<br>Build ROM from working folder（将工作目录下的ROM打包，打包完就可以刷机了。）</li>
+<li>About/Update kitchen（厨房的升级，关于）</li>
+<li>X. Exit（退出）</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Fengzijk wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/ROM修改/" rel="tag"># ROM修改</a>
+          
+            <a href="/tags/美化ROM/" rel="tag"># 美化ROM</a>
+          
+        </div>
+      
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.jpg" alt="Fengzijk WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-img.jpg" alt="Fengzijk Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/11/15/imy/" rel="next" title="让国产山寨手机死机黑屏之imy">
+                <i class="fa fa-chevron-left"></i> 让国产山寨手机死机黑屏之imy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/10/11/rom/" rel="prev" title="自己刷机的一些感触和经验">
+                自己刷机的一些感触和经验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fengzijk" />
+          <p class="site-author-name" itemprop="name">Fengzijk</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fengzijk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/543439318" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/guo-zhi-feng" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-battery-3"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dmlcoding.com" title="Time渐行渐远" target="_blank">Time渐行渐远</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://oopsman.github.io" title="照见自在" target="_blank">照见自在</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.hyperj.net" title="HyperJ" target="_blank">HyperJ</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-厨房简介及环境配置"><span class="nav-number">1.</span> <span class="nav-text">一.厨房简介及环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-厨房简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.厨房简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-厨房支持的机型（ROM）"><span class="nav-number">1.2.</span> <span class="nav-text">2.厨房支持的机型（ROM）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）HTC设备"><span class="nav-number">1.2.1.</span> <span class="nav-text">1）HTC设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）非HTC设备："><span class="nav-number">1.3.</span> <span class="nav-text">2）非HTC设备：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）理论支持设备（还没正式确定）"><span class="nav-number">1.4.</span> <span class="nav-text">3）理论支持设备（还没正式确定）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-Menu（主菜单）"><span class="nav-number">2.</span> <span class="nav-text">Main Menu（主菜单）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengzijk</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d7ade367b7a44ab19fee7e0acbbe8d22",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+ 
+ 
+  
+</body>
+</html>

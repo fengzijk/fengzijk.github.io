@@ -1,0 +1,941 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="服务治理,SOA,微服务," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="程序员疯子的博客-Code is Art, Code is Poetry!" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
+<meta name="keywords" content="服务治理,SOA,微服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈服务治理与微服务">
+<meta property="og:url" content="http://91fz.org/2017/06/27/fuwu01/index.html">
+<meta property="og:site_name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+<meta property="og:description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
+<meta property="og:image" content="http://91fz.org/images/fuwu/01.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/02.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/03.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/04.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/05.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/06.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/07.png">
+<meta property="og:image" content="http://91fz.org/images/fuwu/08.png">
+<meta property="og:updated_time" content="2017-07-01T16:13:47.648Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈服务治理与微服务">
+<meta name="twitter:description" content="近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。     先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。 互联网架构演变单体体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈">
+<meta name="twitter:image" content="http://91fz.org/images/fuwu/01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://91fz.org/2017/06/27/fuwu01/"/>
+
+
+
+
+
+  <title> 谈谈服务治理与微服务 | 程序员疯子的博客-Code is Art, Code is Poetry! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">程序员疯子的博客-Code is Art, Code is Poetry!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://91fz.org/2017/06/27/fuwu01/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fengzijk">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="程序员疯子的博客-Code is Art, Code is Poetry!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="程序员疯子的博客-Code is Art, Code is Poetry!" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                谈谈服务治理与微服务
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-27T00:00:00+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/微服务-SOA-服务治理/" itemprop="url" rel="index">
+                    <span itemprop="name">微服务 SOA  服务治理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/06/27/fuwu01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		
+		
+        
+		
+          
+
+          
+
+          
+ 
+        
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>近期都在大谈微服务，本人也在做相关的工作已经两年左右了，做了一个微服务的分享，整理了这篇文章，有问题可以在下面留言，可以和大家一起讨论。    </p>
+<p>先简单介绍了互联网架构的演变，进而介绍了服务化，最后再介绍微服务，微服务是服务治理的升级也是互联网架构的进一步延伸。</p>
+<h2 id="互联网架构演变"><a href="#互联网架构演变" class="headerlink" title="互联网架构演变"></a>互联网架构演变</h2><h3 id="单体体架构"><a href="#单体体架构" class="headerlink" title="单体体架构"></a>单体体架构</h3><p>在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈不上架构，但也可以说是很好的架构，因为它足够简单。 如下图：</p>
+<p><img src="/images/fuwu/01.png" alt="image"><br><img src="/images/fuwu/02.png" alt="image"></p>
+<ul>
+<li><strong>单体式应用的优点明显：</strong><br>现有IDE都是集成开发环境，非常适合单体式应用，开发、编译、调试一站式搞定。<br>一个应用包含所有功能，容易测试和部署。<br>运行在一个物理节点，环境单一，运行稳定，故障恢复简单。</li>
+<li><strong>单体式应用的缺点也明显：</strong><br>业务边界模糊，模块职责不清晰，当系统逐渐变大，代码依赖复杂，难以维护。<br>所有人同时在一个工程上开发，容易发生代码修改冲突，依赖复杂导致项目协调困难，并且局部修改影响不可知，需要全覆盖测试，需要重新部署，难以支持大团队并行开发。<br>当系统很大时，编译和部署耗时。<br>应用水平扩展难，一方面状态在应用内部管理，无法透明路由；另<br>一方面，不同模块对资源需求差异大，当业务量增大时，一视同仁地为所有模块增加机器导致硬件浪费。</li>
+</ul>
+<h3 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构"></a>MVC架构</h3><p>但随着浏览器的出现便产生了<strong>web</strong>应用，<strong>web</strong>应用的特点是界面部分是显示在浏览器中，服务处理是在服务容器中的，页面显示一般用css+js+html技术来处理，而后端可以用<strong>Java</strong>、<strong>PHP等语言</strong>，这就产生了前后端分离。对于<strong>web</strong>系统，一体架构难以满足前后端分离的开发需求，因而便产生了<strong>MVC</strong>架构。<br><strong>为什么我把Mvc但那处处呢，因为他也有划时代的意义，其实从大方向讲MVC架构也是单体架构的一种</strong>   </p>
+<p><strong>MVC架构如下图：</strong><br><img src="/images/fuwu/03.png" alt="image"></p>
+<p>MVC才算的上真正意义上的架构，因为它除了解决了前后端分离问题，还引入了一种全新的开发模式，用一种业务逻辑、数据、界面显示分离的方法组织代码，使得整个应用层次更加分明，而且各个层次之间不但减低了耦合性，还提高了各个层次的可重用性。</p>
+<p>但随着应用规模的不断扩大，应用模块不断增加，整个应用也显得越来越臃肿，维护起来也更加困难，因此便又产生了<strong>多应用架构</strong>。</p>
+<h3 id="多应用架构"><a href="#多应用架构" class="headerlink" title="多应用架构"></a>多应用架构</h3><p>多应用架构很简单，就是把原来的应用按照业务特点拆分成多个应用。比如一个大型电商系统可能包含用户系统、商品系统、订单系统、评价系统等等，我们可以把他们独立出来形成一个个单独的应用。多应用架构的特点是应用之间各自独立 ，不相互调用。<strong>如下图：</strong><br><img src="/images/fuwu/04.png" alt="image"></p>
+<p><strong>多应用虽然解决了应用臃肿问题，但应用之间相互独立，有些共同的业务或代码无法复用。</strong></p>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>对于一个大型的互联网系统，一般会包含多个应用，而且应用之间往往还存在共同的业务，并且应用之间还存在调用关系。除此之外 ，对于大型的互联网系统还有一些其它的挑战，比如如何应对急剧增长的用户，如何管理好研发团队快速迭代产品研发，如何保持产品升级更加稳定等等 。</p>
+<p>因此，为了使业务得到很好的复用，模块更加容易拓展和维护，我们希望业务与应用分离，某个业务不再属于一个应用，而是作为一个独立的服务单独进行维护。应用本身不再是一个臃肿的模块堆积，而是由一个个模块化的服务组件组合而成。</p>
+<p>在分布式应用架构中，应用相互独立，每个应用代码独立开发，独立部署，应用通过有限的API接口互相关联。API接口属于应用一部分，一般和表示层处于同一层次，两者共享业务逻辑层，API和表示层采用同样的web端技术，通讯协议一般使用HTTP，数据格式是JSON，应用集成方式比较简化。</p>
+<p>分布式架构首先对系统按照业务进行垂直切分，把系统切分为不同应用，针对资源需求特点（比如<strong>CPU/IO/存储密集型</strong>），通过加强硬件配置满足不同应用的需求，避免一刀切方式带来的资源浪费。<br><img src="/images/fuwu/05.png" alt="image"></p>
+<p>技术上，<strong>API</strong>采用标准的<strong>HTTP/JSON</strong>进行通讯，调用双方实现难度都不大，但是API一般是“裸奔”的，在系统层面，调用依赖关系不透明，调用可靠性缺乏保障，因此只适用应用之间依赖链路少，调用量不大的系统，即应用之间耦合确实够松的系统。   </p>
+<h3 id="SOA架构"><a href="#SOA架构" class="headerlink" title="SOA架构"></a>SOA架构</h3><p>有人说<strong>SOA</strong>就是分布式，其实这个界限有点模糊，不过相比较普通<strong>API</strong>方式，<strong>SOA架构更进一步</strong>： </p>
+<ul>
+<li>每个<strong>service</strong>都是浓缩的精华，聚焦某方面核心业务，同时以复用的方式供整个系统共享。 </li>
+<li>服务作为独立的应用，独立部署，接口清晰，很容易做自动化测试和部署。 </li>
+<li>服务是无状态的，很容易做水平扩展；通过容器虚拟化技术，实现故障隔离和资源高效利用，业务量大的时候，加机器即可。 </li>
+<li>基于SOA的系统可以根据服务运行情况，灵活调控服务资源，包括服务上下架、服务升降级等，使系统真正具备可运营的能力。</li>
+<li>当然天下没有免费的午餐，<strong>SOA</strong>也带来了额外复杂性和弊端： </li>
+<li>系统依赖复杂，给开发/测试/部署带来一系列挑战。 </li>
+<li>端到端的调用链路长，可靠性降低，依赖网络状况、服务框架及具体service的质量。 </li>
+<li>分布式数据一致性和分布式事务支持困难，一般通过最终一致性简化解决。<br>端到端的测试和排障复杂，<strong>SOA</strong>对运维提出更高要求。<br>例子如下：</li>
+</ul>
+<p><img src="/images/fuwu/06.png" alt="image"></p>
+<ul>
+<li><strong>SOA的特点</strong>  </li>
+</ul>
+<ul>
+<li>可从企业外部访问</li>
+<li>随时可用</li>
+<li>粗粒度的服务接口分级</li>
+<li>松散耦合</li>
+<li>可重用的服务</li>
+<li>服务接口设计管理</li>
+<li>标准化的服务接口</li>
+<li>支持各种消息模式</li>
+<li><p>精确定义的服务契约<br>说起SOA 我第一想到的是<strong>企业服务总线（ESB）</strong>     </p>
+<h4 id="SOA的好处"><a href="#SOA的好处" class="headerlink" title="SOA的好处"></a><strong>SOA的好处</strong></h4><p><strong>那么SOA有哪些好处呢？</strong></p>
+</li>
+<li><p>架构上系统更加清晰</p>
+</li>
+<li>核心模块稳定，以服务组件为单位进行升级，避免了频繁发布带来的风险</li>
+<li>开发管理方便</li>
+<li>单独团队维护、工作分明，职责清晰</li>
+<li>业务复用、代码复用</li>
+<li>非常容易拓展</li>
+<li><strong>SOA</strong>实现方式</li>
+</ul>
+<p>如果要实现SOA的话，最常用的方式就是利用<strong>RPC</strong>框架。因为服务组件一般分布在不同的服务器上，所以要实现服务化需要解决的第一个问题就是RPC<strong>远程服务调用</strong>。类似于<strong>RPC</strong>方案有很多，比如：</p>
+<ul>
+<li><strong>Java RMI</strong></li>
+<li><strong>WebService</strong></li>
+<li><strong>Hessian</strong></li>
+<li><strong>Thrift</strong></li>
+<li>… </li>
+<li>…   </li>
+</ul>
+<h3 id="服务化面临的挑战"><a href="#服务化面临的挑战" class="headerlink" title="服务化面临的挑战"></a>服务化面临的挑战</h3><p><strong>上面提到要实现服务化首先需要解决远程服务调用问题，除此之外，还有很多其他问题需要解决。</strong></p>
+<ul>
+<li>服务越来越多，配置管理复杂</li>
+<li>服务间依赖关系复杂</li>
+<li>服务之间的负载均衡</li>
+<li>服务的拓展</li>
+<li>服务监控</li>
+<li>服务降级</li>
+<li>服务鉴权</li>
+<li>服务上线与下线</li>
+<li>服务文档</li>
+<li>… </li>
+<li>…<br><strong>有时间我专门有写一篇关于RPC的文章</strong><br>我们接着往下说，有了服务  就需要治理跟维护  下面我们讲一讲服务治理</li>
+</ul>
+<h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><p>上面提到了服务化，其实要想服务化，服务治理是关键。那么有没有好的服务治理方案呢？答案是有的，而且还很多，比如：   <strong>ICE</strong> <strong>dubbo</strong> <strong>springcloud</strong> <strong>魔毯</strong> 等等<br>下面我们简单说说服务治理所需要的</p>
+<ul>
+<li>集中的注册中心和存储库，以查找和发布与服务相关的构件和元数据。</li>
+<li>查找正确的授权服务。</li>
+<li>避免重复工作。</li>
+<li>促进重用。</li>
+<li>确定服务在 <strong>SOA</strong> 生命周期中的当前状态。</li>
+<li>为服务订阅者提供可见性。</li>
+<li>确定相关服务和更改某个服务所造成的影响。</li>
+<li>传达对服务所做的更改。</li>
+<li>用于联系和强制应用于某个服务的策略的机制。策略通过使用治理框架来定义。</li>
+<li>具有生命周期感知性的可自定义系统，该系统在生命周期中发生阶段更改时触发验证，以便能够自动化逐个阶段的治理验证。</li>
+<li>在理想的情况下，注册中心应该针对SOA运行时进行优化，以便能够在运行时期间，使用存储在注册中心的元数据来通过动态路由充实内容。<br><strong>详细的各个中间件的原理以及怎么解决服务治理的我有专门写文章</strong><br>继续往下说 从去年微服务突然火了起来，咱们看看微服务   <h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2></li>
+</ul>
+<p>在很多人都在谈微服务，那么到底什么是微服务呢？这里谈谈我对微服务的理解。</p>
+<p>微服务有两个核心：</p>
+<ul>
+<li><strong>微：服务的粒度要细，即服务要细化到API(要做到这一点很不容易，比如服务的切分)</strong>   </li>
+<li><strong>服务：提供好服务，要让用户感到好用</strong>   </li>
+</ul>
+<p>上面两个核心总结起来，可以用下面这幅图表示：<br><img src="/images/fuwu/07.png" alt="image">   </p>
+<p>从上面这幅图看出，微服务特别简单（好的架构就应该简单），我们把服务再拆分成一个个API，API是一个完整的功能。然后我们把API扔到一个“云上”，然后用户就可以到“云上”获取所有API的服务，这个“云”保证能提供好的服务。</p>
+<p>我们可以看到，有了微服务之后，服务对用户来说变得特别简单。不再需要去注册中心查找服务，不再去做鉴权处理，不用担心服务挂掉，不用担心不会使用服务，所有的问题这个“云”都解决了。这也是微服务的核心之一，提供好服务。<br><img src="/images/fuwu/08.png" alt="image"></p>
+<p>说到这里，大家就应该大体知道该怎么做微服务了 其实“云”是最关键的。<br>微服务的关键是服务网关，所以，上面提到的“云”就是服务网关。要做微服务，我们先定义一下微服务需要具备的特点。</p>
+<h5 id="微服务的特点"><a href="#微服务的特点" class="headerlink" title="微服务的特点"></a>微服务的特点</h5><ul>
+<li><p>服务需要再细化成API（服务接口——&gt;服务API）</p>
+</li>
+<li><p>每个服务由一组API组成</p>
+</li>
+<li>以API形式对外提供统一格式的服务</li>
+<li>使用者无需任何配置，直接调用（http）</li>
+<li>完整的API文档</li>
+<li>API服务安全可靠稳定   </li>
+<li><strong>总结：大概是15年8月接触SOA吧以上就是我的粗浅理解，下一篇我会介绍服务治理的几个框架</strong></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Fengzijk wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/服务治理/" rel="tag"># 服务治理</a>
+          
+            <a href="/tags/SOA/" rel="tag"># SOA</a>
+          
+            <a href="/tags/微服务/" rel="tag"># 微服务</a>
+          
+        </div>
+      
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.jpg" alt="Fengzijk WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-img.jpg" alt="Fengzijk Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/kotlindemo/" rel="next" title="Kotlin初探 集成springMvc">
+                <i class="fa fa-chevron-left"></i> Kotlin初探 集成springMvc
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fengzijk" />
+          <p class="site-author-name" itemprop="name">Fengzijk</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fengzijk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/543439318" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/guo-zhi-feng" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-battery-3"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dmlcoding.com" title="Time渐行渐远" target="_blank">Time渐行渐远</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://oopsman.github.io" title="照见自在" target="_blank">照见自在</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.hyperj.net" title="HyperJ" target="_blank">HyperJ</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网架构演变"><span class="nav-number">1.</span> <span class="nav-text">互联网架构演变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体体架构"><span class="nav-number">1.1.</span> <span class="nav-text">单体体架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC架构"><span class="nav-number">1.2.</span> <span class="nav-text">MVC架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多应用架构"><span class="nav-number">1.3.</span> <span class="nav-text">多应用架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式架构"><span class="nav-number">1.4.</span> <span class="nav-text">分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOA架构"><span class="nav-number">1.5.</span> <span class="nav-text">SOA架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SOA的好处"><span class="nav-number">1.5.1.</span> <span class="nav-text">SOA的好处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务化面临的挑战"><span class="nav-number">1.6.</span> <span class="nav-text">服务化面临的挑战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务治理"><span class="nav-number">2.</span> <span class="nav-text">服务治理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微服务"><span class="nav-number">3.</span> <span class="nav-text">微服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#微服务的特点"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">微服务的特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengzijk</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d7ade367b7a44ab19fee7e0acbbe8d22",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+ 
+ 
+  
+</body>
+</html>
