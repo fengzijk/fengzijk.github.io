@@ -1,0 +1,1 @@
+const t={key:"v-2409f61a",path:"/old-blog/Centos%E5%AE%89%E8%A3%85JDK.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"Centos \u5B89\u88C5JDK",slug:"centos-\u5B89\u88C5jdk",children:[]}],git:{},filePathRelative:"old-blog/Centos\u5B89\u88C5JDK.md"};export{t as data};
